@@ -1,0 +1,8 @@
+#!/bin/sh
+ant clean
+#ant -Dsource=go
+#ant -Dsource=chado-go
+ant -Dsource=chado-genetics
+ant -Dsource=chado-genomics
+ant -Dsource=so
+ant -Dsource=entrez-organism

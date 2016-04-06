@@ -1,0 +1,15 @@
+#!/bin/sh
+cd dbmodel
+ant clean
+cd ..
+cd integrate
+ant clean
+cd ..
+cd postprocess
+ant clean
+cd ..
+cd webapp
+ant clean
+cd ..
+rm started
+rm ended
