@@ -7,41 +7,51 @@
 
   <sources>
 
-    <!-- Arachis (peanut) genetics -->
-    <source name="chado-genetics" type="legfed" dump="true">
-      <property name="source.db.name" value="tripal"/>
-      <property name="organisms" value="3398 3817 3818 130453 130454"/>
-      <property name="dataSetTitle" value="LegFed Arachis data"/>
-      <property name="dataSourceName" value="LegFed Tripal database"/>
-      <property name="converter.class" value="org.intermine.bio.dataconversion.ChadoDBConverter"/>
-      <property name="processors" value="org.intermine.bio.dataconversion.GeneticProcessor"/>
-    </source>
-
-    <!-- Arachis duranensis and ipaensis genomics -->
+    <!-- chado genomics - has priority, so run first -->
     <source name="chado-genomics" type="legfed" dump="true">
       <property name="source.db.name" value="tripal"/>
       <property name="organisms" value="3398 3817 3818 130453 130454"/>
-      <property name="dataSetTitle" value="LegFed Arachis duranensis and ipaensis data"/>
-      <property name="dataSourceName" value="LegFed Tripal database"/>
+      <property name="dataSetTitle" value="LIS Arachis data"/>
+      <property name="dataSourceName" value="LIS Tripal database"/>
       <property name="converter.class" value="org.intermine.bio.dataconversion.ChadoDBConverter"/>
       <property name="processors" value="org.intermine.bio.dataconversion.SequenceProcessor"/>
     </source>
 
+    <!-- chado genetics -->
+    <source name="chado-genetics" type="legfed" dump="true">
+      <property name="source.db.name" value="tripal"/>
+      <property name="organisms" value="3398 3817 3818 130453 130454"/>
+      <property name="dataSetTitle" value="LIS Arachis data"/>
+      <property name="dataSourceName" value="LIS Tripal database"/>
+      <property name="converter.class" value="org.intermine.bio.dataconversion.ChadoDBConverter"/>
+      <property name="processors" value="org.intermine.bio.dataconversion.GeneticProcessor"/>
+    </source>
+
+    <!-- chado featureprop attributes -->
+    <source name="chado-featureprop" type="legfed" dump="true">
+      <property name="source.db.name" value="tripal"/>
+      <property name="organisms" value="3398 3817 3818 130453 130454"/>
+      <property name="dataSetTitle" value="LIS Arachis data"/>
+      <property name="dataSourceName" value="LIS Tripal database"/>
+      <property name="converter.class" value="org.intermine.bio.dataconversion.ChadoDBConverter"/>
+      <property name="processors" value="org.intermine.bio.dataconversion.FeaturePropProcessor"/>
+    </source>
+
+    <!-- chado GO annotation -->
+    <source name="chado-go" type="legfed" dump="true">
+      <property name="source.db.name" value="tripal"/>
+      <property name="organisms" value="3398 3817 3818 130453 130454"/>
+      <property name="dataSetTitle" value="LIS Arachis data"/>
+      <property name="dataSourceName" value="LIS Tripal database"/>
+      <property name="converter.class" value="org.intermine.bio.dataconversion.ChadoDBConverter"/>
+      <property name="processors" value="org.intermine.bio.dataconversion.GOProcessor"/>
+    </source>
+    
     <!-- gene ontology -->
     <source name="go" type="go">
         <property name="src.data.file" location="/home/intermine/data/go-annotation/go.obo"/>
     </source>
 
-    <!-- GO annotation -->
-    <source name="chado-go" type="legfed" dump="true">
-      <property name="source.db.name" value="tripal"/>
-      <property name="organisms" value="130453 130454"/>
-      <property name="dataSetTitle" value="LegFed Arachis duranensis and ipaensis data"/>
-      <property name="dataSourceName" value="LegFed Tripal database"/>
-      <property name="converter.class" value="org.intermine.bio.dataconversion.ChadoDBConverter"/>
-      <property name="processors" value="org.intermine.bio.dataconversion.GOProcessor"/>
-    </source>
-    
     <!-- sequence ontology -->
     <source name="so" type="so">
       <property name="src.data.file" location="../../bio/sources/so/so.obo"/>
@@ -56,7 +66,7 @@
 
   <post-processing>
 
-    <!-- order from flymine -->
+    <!-- order matters! -->
     <post-process name="populate-located-features"/>
     <post-process name="create-references" />
     <post-process name="create-chromosome-locations-and-lengths"/>

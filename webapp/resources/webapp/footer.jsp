@@ -44,8 +44,9 @@
 
         <!-- LegFed and relevant mines -->
         <li><a href="http://intermine.ncgr.org/beanmine/begin.do" target="_blank">LegFed BeanMine (string bean)</a></li>
-        <li><a href="http://intermine.ncgr.org/multimine/begin.do" target="_blank">LegFed MultiMine (string bean, soybean)</a></li>
+        <li><a href="http://intermine.ncgr.org/multimine/begin.do" target="_blank">LegFed LegumeMine (various legumes)</a></li>
         <li><a href="http://intermine.ncgr.org/soymine/begin.do" target="_blank">LegFed Soymine (soybean)</a></li>
+	<li><a href="http://intermine.ncgr.org/peanutmine/begin.do" target="_blank">LegFed PeanutMine (several peanut species)</a></li>
         <li><a href="http://medicmine.jcvi.org/medicmine/begin.do" target="_blank">JCVI MedicMine (medicago)</a></li>
 
     </ul>

@@ -1,2 +1,3 @@
 #!/bin/sh
+echo "********** peanutmine/dbmodel **********"
 ant clean build-db
