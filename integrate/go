@@ -3,7 +3,7 @@ echo "********** peanutmine/integrate **********"
 ant clean
 #ant -Dsource=go
 #ant -Dsource=so
-ant -Dsource=chado-genomics
+#ant -Dsource=chado-genomics
 ant -Dsource=chado-genetics
 ant -Dsource=chado-featureprop
 ant -Dsource=chado-go

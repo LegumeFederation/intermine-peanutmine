@@ -19,7 +19,15 @@
 
   <class className="org.intermine.model.bio.Chromosome">
     <fields>
-      <fieldconfig fieldExpr="secondaryIdentifier"/>
+      <fieldconfig fieldExpr="primaryIdentifier"/>
+      <fieldconfig fieldExpr="organism.name"/>
+      <fieldconfig fieldExpr="length" displayer="/model/sequenceShortDisplayerWithField.jsp" />
+    </fields>
+  </class>
+
+  <class className="org.intermine.model.bio.Supercontig">
+    <fields>
+      <fieldconfig fieldExpr="primaryIdentifier"/>
       <fieldconfig fieldExpr="organism.name"/>
       <fieldconfig fieldExpr="length" displayer="/model/sequenceShortDisplayerWithField.jsp" />
     </fields>
@@ -51,20 +59,20 @@
     <fields>
       <fieldconfig fieldExpr="organism.name" label="organism"/>
       <fieldconfig fieldExpr="primaryIdentifier"/>
-      <fieldconfig fieldExpr="secondaryIdentifier"/>
-      <fieldconfig fieldExpr="symbol"/>
-      <fieldconfig fieldExpr="name"/>
       <fieldconfig fieldExpr="length" displayer="/model/sequenceShortDisplayerWithField.jsp" />
-      <fieldconfig fieldExpr="chromosomeLocation" displayer="/model/chromosomeLocDisplayer.jsp" showInResults="false" />
-      <fieldconfig fieldExpr="chromosome.secondaryIdentifier" showInInlineCollection="false" showInSummary="false" />
-      <fieldconfig fieldExpr="chromosomeLocation.start" showInInlineCollection="false" showInSummary="false" />
-      <fieldconfig fieldExpr="chromosomeLocation.end" showInInlineCollection="false" showInSummary="false" />
+      <!-- <fieldconfig fieldExpr="chromosomeLocation" displayer="/model/chromosomeLocDisplayer.jsp" showInResults="false" /> -->
+      <fieldconfig fieldExpr="chromosome.primaryIdentifier" showInInlineCollection="true" showInSummary="false" label="Chromosome" />
+      <fieldconfig fieldExpr="chromosomeLocation.start" showInInlineCollection="true" showInSummary="false" label="Start" />
+      <fieldconfig fieldExpr="chromosomeLocation.end" showInInlineCollection="true" showInSummary="false" label="End" />
+      <fieldconfig fieldExpr="supercontig.primaryIdentifier" showInInlineCollection="true" showInSummary="false" label="Supercontig" />
+      <fieldconfig fieldExpr="supercontigLocation.start" showInInlineCollection="true" showInSummary="false" label="Start" />
+      <fieldconfig fieldExpr="supercontigLocation.end" showInInlineCollection="true" showInSummary="false" label="End" />
     </fields>
   </class>
 
   <class className="org.intermine.model.bio.Location">
     <fields>
-      <fieldconfig fieldExpr="feature.primaryIdentifier"/>
+      <fieldconfig fieldExpr="feature.primaryIdentifier" label="DB identifier"/>
       <fieldconfig fieldExpr="start"/>
       <fieldconfig fieldExpr="end"/>
       <fieldconfig fieldExpr="strand"/>
@@ -75,17 +83,19 @@
     <fields>
       <fieldconfig fieldExpr="primaryIdentifier"/>
       <fieldconfig fieldExpr="length" displayer="/model/sequenceShortDisplayerWithField.jsp" />
-      <fieldconfig fieldExpr="chromosomeLocation" displayer="/model/chromosomeLocDisplayer.jsp" showInResults="false" />
-      <fieldconfig fieldExpr="chromosome.secondaryIdentifier" showInInlineCollection="false" showInSummary="false" />
-      <fieldconfig fieldExpr="chromosomeLocation.start" showInInlineCollection="false" showInSummary="false" />
-      <fieldconfig fieldExpr="chromosomeLocation.end" showInInlineCollection="false" showInSummary="false" />
+      <!-- <fieldconfig fieldExpr="chromosomeLocation" displayer="/model/chromosomeLocDisplayer.jsp" showInResults="false" /> -->
+      <fieldconfig fieldExpr="chromosome.primaryIdentifier" showInInlineCollection="true" showInSummary="false" label="Chromosome" />
+      <fieldconfig fieldExpr="chromosomeLocation.start" showInInlineCollection="true" showInSummary="false" label="Start" />
+      <fieldconfig fieldExpr="chromosomeLocation.end" showInInlineCollection="true" showInSummary="false" label="End" />
+      <fieldconfig fieldExpr="supercontig.primaryIdentifier" showInInlineCollection="true" showInSummary="false" label="Supercontig" />
+      <fieldconfig fieldExpr="supercontigLocation.start" showInInlineCollection="true" showInSummary="false" label="Start" />
+      <fieldconfig fieldExpr="supercontigLocation.end" showInInlineCollection="true" showInSummary="false" label="End" />
     </fields>
   </class>
 
   <class className="org.intermine.model.bio.Polypeptide">
     <fields>
       <fieldconfig fieldExpr="primaryIdentifier"/>
-      <fieldconfig fieldExpr="secondaryIdentifier"/>
       <fieldconfig fieldExpr="length" displayer="/model/sequenceShortDisplayerWithField.jsp" />
     </fields>
   </class>
@@ -147,16 +157,6 @@
     </fields>
   </class>
 
-  <class className="org.intermine.model.bio.Protein">
-    <inlinelist>
-      <table path="synonyms.value" showLinksToObjects="true" />
-    </inlinelist>
-    <fields>
-      <fieldconfig fieldExpr="primaryIdentifier"/>
-      <fieldconfig fieldExpr="primaryAccession"/>
-      <fieldconfig fieldExpr="length" displayer="/model/sequenceShortDisplayerWithField.jsp" />
-    </fields>
-  </class>
 
   <class className="org.intermine.model.bio.Publication">
     <headerconfig>
@@ -198,14 +198,22 @@
     <fields>
       <fieldconfig fieldExpr="primaryIdentifier"/>
       <fieldconfig fieldExpr="length" displayer="/model/sequenceShortDisplayerWithField.jsp" />
-      <fieldconfig fieldExpr="chromosomeLocation" displayer="/model/chromosomeLocDisplayer.jsp" showInResults="false"/>
-      <fieldconfig fieldExpr="chromosome.secondaryIdentifier" showInInlineCollection="false" showInSummary="false" />
-      <fieldconfig fieldExpr="chromosomeLocation.start" showInInlineCollection="false" showInSummary="false" />
-      <fieldconfig fieldExpr="chromosomeLocation.end" showInInlineCollection="false" showInSummary="false" />
+      <!-- <fieldconfig fieldExpr="chromosomeLocation" displayer="/model/chromosomeLocDisplayer.jsp" showInResults="false"/> -->
+      <fieldconfig fieldExpr="chromosome.primaryIdentifier" showInInlineCollection="true" showInSummary="false" label="Chromosome" />
+      <fieldconfig fieldExpr="chromosomeLocation.start" showInInlineCollection="true" showInSummary="false" label="Start" />
+      <fieldconfig fieldExpr="chromosomeLocation.end" showInInlineCollection="true" showInSummary="false" label="End" />
+      <fieldconfig fieldExpr="supercontig.primaryIdentifier" showInInlineCollection="true" showInSummary="false" label="Supercontig" />
+      <fieldconfig fieldExpr="supercontigLocation.start" showInInlineCollection="true" showInSummary="false" label="Start" />
+      <fieldconfig fieldExpr="supercontigLocation.end" showInInlineCollection="true" showInSummary="false" label="End" />
     </fields>
   </class>
 
   <class className="org.intermine.model.bio.LinkageGroup">
+    <headerconfig>
+      <titles>
+        <title mainTitles="primaryIdentifier" numberOfMainTitlesToShow="1" />
+      </titles>
+    </headerconfig>
     <fields>
       <fieldconfig fieldExpr="primaryIdentifier"/>
       <fieldconfig fieldExpr="length" label="Length (cM)" />
@@ -243,26 +251,29 @@
   <class className="org.intermine.model.bio.GeneticMarker">
     <fields>
       <fieldconfig fieldExpr="primaryIdentifier" />
-      <fieldconfig fieldExpr="secondaryIdentifier" label="Name"/>
       <fieldconfig fieldExpr="type" label="Type"/>
       <fieldconfig fieldExpr="length" displayer="/model/sequenceShortDisplayerWithField.jsp" />
-      <fieldconfig fieldExpr="chromosomeLocation" displayer="/model/chromosomeLocDisplayer.jsp" showInResults="false" />
-      <fieldconfig fieldExpr="chromosome.secondaryIdentifier" showInInlineCollection="false" showInSummary="false" />
-      <fieldconfig fieldExpr="chromosomeLocation.start" showInInlineCollection="false" showInSummary="false" />
-      <fieldconfig fieldExpr="chromosomeLocation.end" showInInlineCollection="false" showInSummary="false" />
+      <!-- <fieldconfig fieldExpr="chromosomeLocation" displayer="/model/chromosomeLocDisplayer.jsp" showInResults="false" /> -->
+      <fieldconfig fieldExpr="chromosome.primaryIdentifier" showInInlineCollection="true" showInSummary="false" label="Chromosome" />
+      <fieldconfig fieldExpr="chromosomeLocation.start" showInInlineCollection="true" showInSummary="false" label="Start" />
+      <fieldconfig fieldExpr="chromosomeLocation.end" showInInlineCollection="true" showInSummary="false" label="End" />
+      <fieldconfig fieldExpr="supercontig.primaryIdentifier" showInInlineCollection="true" showInSummary="false" label="Supercontig" />
+      <fieldconfig fieldExpr="supercontigLocation.start" showInInlineCollection="true" showInSummary="false" label="Start" />
+      <fieldconfig fieldExpr="supercontigLocation.end" showInInlineCollection="true" showInSummary="false" label="End" />
     </fields>
   </class>
 
   <class className="org.intermine.model.bio.QTL">
     <headerconfig>
       <titles>
-        <title mainTitles="symbol|primaryIdentifier" numberOfMainTitlesToShow="1" subTitles="*organism.shortName*" />
+        <title mainTitles="primaryIdentifier" numberOfMainTitlesToShow="1" subTitles="*organism.shortName*" />
       </titles>
     </headerconfig>
     <fields>
       <fieldconfig fieldExpr="primaryIdentifier" label="DB identifier"/>
     </fields>
   </class>
+
 
   <!-- exporters -->
   <tableExportConfig id="sequence" className="org.intermine.bio.web.export.SequenceHttpExporter"/>
@@ -287,17 +298,9 @@
     
     <reportdisplayer javaClass="org.intermine.bio.web.displayer.SequenceFeatureDisplayer"
                      jspName="model/sequenceFeatureDisplayer.jsp"
-                     replacesFields="chromosome,chromosomeLocation,sequence,length,sequenceOntologyTerm,locations,cytoLocation"
+                     replacesFields="chromosome,chromosomeLocation,sequence,length,sequenceOntologyTerm,locations,cytoLocation,supercontig,supercontigLocation"
                      placement="summary"
                      types="SequenceFeature"/>
-
-    <!-- no Uniprot data
-    <reportdisplayer javaClass="org.intermine.bio.web.displayer.UniProtCommentsDisplayer"
-                     jspName="model/uniProtCommentsDisplayer.jsp"
-                     replacesFields=""
-                     placement="Proteins"
-                     types="Gene,Protein"/>
-    -->
 
     <reportdisplayer javaClass="org.intermine.bio.web.displayer.JBrowseDisplayer"
                      jspName="model/jbrowseDisplayer.jsp"

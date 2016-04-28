@@ -18,34 +18,34 @@
     </source>
 
     <!-- chado genetics -->
-    <source name="chado-genetics" type="legfed" dump="true">
-      <property name="source.db.name" value="tripal"/>
-      <property name="organisms" value="3398 3817 3818 130453 130454"/>
-      <property name="dataSetTitle" value="LIS Arachis data"/>
-      <property name="dataSourceName" value="LIS Tripal database"/>
-      <property name="converter.class" value="org.intermine.bio.dataconversion.ChadoDBConverter"/>
-      <property name="processors" value="org.intermine.bio.dataconversion.GeneticProcessor"/>
-    </source>
+<!--     <source name="chado-genetics" type="legfed" dump="true"> -->
+<!--       <property name="source.db.name" value="tripal"/> -->
+<!--       <property name="organisms" value="3398 3817 3818 130453 130454"/> -->
+<!--       <property name="dataSetTitle" value="LIS Arachis data"/> -->
+<!--       <property name="dataSourceName" value="LIS Tripal database"/> -->
+<!--       <property name="converter.class" value="org.intermine.bio.dataconversion.ChadoDBConverter"/> -->
+<!--       <property name="processors" value="org.intermine.bio.dataconversion.GeneticProcessor"/> -->
+<!--     </source> -->
 
     <!-- chado featureprop attributes -->
-    <source name="chado-featureprop" type="legfed" dump="true">
-      <property name="source.db.name" value="tripal"/>
-      <property name="organisms" value="3398 3817 3818 130453 130454"/>
-      <property name="dataSetTitle" value="LIS Arachis data"/>
-      <property name="dataSourceName" value="LIS Tripal database"/>
-      <property name="converter.class" value="org.intermine.bio.dataconversion.ChadoDBConverter"/>
-      <property name="processors" value="org.intermine.bio.dataconversion.FeaturePropProcessor"/>
-    </source>
+<!--     <source name="chado-featureprop" type="legfed" dump="true"> -->
+<!--       <property name="source.db.name" value="tripal"/> -->
+<!--       <property name="organisms" value="3398 3817 3818 130453 130454"/> -->
+<!--       <property name="dataSetTitle" value="LIS Arachis data"/> -->
+<!--       <property name="dataSourceName" value="LIS Tripal database"/> -->
+<!--       <property name="converter.class" value="org.intermine.bio.dataconversion.ChadoDBConverter"/> -->
+<!--       <property name="processors" value="org.intermine.bio.dataconversion.FeaturePropProcessor"/> -->
+<!--     </source> -->
 
     <!-- chado GO annotation -->
-    <source name="chado-go" type="legfed" dump="true">
-      <property name="source.db.name" value="tripal"/>
-      <property name="organisms" value="3398 3817 3818 130453 130454"/>
-      <property name="dataSetTitle" value="LIS Arachis data"/>
-      <property name="dataSourceName" value="LIS Tripal database"/>
-      <property name="converter.class" value="org.intermine.bio.dataconversion.ChadoDBConverter"/>
-      <property name="processors" value="org.intermine.bio.dataconversion.GOProcessor"/>
-    </source>
+<!--     <source name="chado-go" type="legfed" dump="true"> -->
+<!--       <property name="source.db.name" value="tripal"/> -->
+<!--       <property name="organisms" value="3398 3817 3818 130453 130454"/> -->
+<!--       <property name="dataSetTitle" value="LIS Arachis data"/> -->
+<!--       <property name="dataSourceName" value="LIS Tripal database"/> -->
+<!--       <property name="converter.class" value="org.intermine.bio.dataconversion.ChadoDBConverter"/> -->
+<!--       <property name="processors" value="org.intermine.bio.dataconversion.GOProcessor"/> -->
+<!--     </source> -->
     
     <!-- gene ontology -->
     <source name="go" type="go">
