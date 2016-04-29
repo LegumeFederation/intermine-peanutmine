@@ -90,7 +90,7 @@
     </ul>
     <ul id="loginbar">
         <!-- start of LegFed adds -->
-        <li><a href="http://legumeinfo.org" target="_blank" alt="LIS - Legume Information System">LIS - Legume Information System</a></li>
+        <li><a href="http://legumeinfo.org" target="_blank" alt="LIS - Legume Information System">Legume Information System</a></li>
         <!-- end of LegFed adds -->
         <li><a href="#" onclick="showContactForm();return false;"><fmt:message key="feedback.link"/></a></li>
         <c:if test="${PROFILE.loggedIn}">

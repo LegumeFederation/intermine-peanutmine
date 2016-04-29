@@ -20,7 +20,7 @@
   <class className="org.intermine.model.bio.Chromosome">
     <fields>
       <fieldconfig fieldExpr="primaryIdentifier"/>
-      <fieldconfig fieldExpr="organism.name"/>
+      <fieldconfig fieldExpr="organism.name" label="Organism"/>
       <fieldconfig fieldExpr="length" displayer="/model/sequenceShortDisplayerWithField.jsp" />
     </fields>
   </class>
@@ -28,7 +28,7 @@
   <class className="org.intermine.model.bio.Supercontig">
     <fields>
       <fieldconfig fieldExpr="primaryIdentifier"/>
-      <fieldconfig fieldExpr="organism.name"/>
+      <fieldconfig fieldExpr="organism.name" label="Organism"/>
       <fieldconfig fieldExpr="length" displayer="/model/sequenceShortDisplayerWithField.jsp" />
     </fields>
   </class>
@@ -57,7 +57,7 @@
 
   <class className="org.intermine.model.bio.Gene">
     <fields>
-      <fieldconfig fieldExpr="organism.name" label="organism"/>
+      <fieldconfig fieldExpr="organism.name" label="Organism"/>
       <fieldconfig fieldExpr="primaryIdentifier"/>
       <fieldconfig fieldExpr="length" displayer="/model/sequenceShortDisplayerWithField.jsp" />
       <!-- <fieldconfig fieldExpr="chromosomeLocation" displayer="/model/chromosomeLocDisplayer.jsp" showInResults="false" /> -->
