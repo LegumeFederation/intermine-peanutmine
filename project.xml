@@ -18,35 +18,57 @@
     </source>
 
     <!-- chado genetics -->
-<!--     <source name="chado-genetics" type="legfed" dump="true"> -->
-<!--       <property name="source.db.name" value="tripal"/> -->
-<!--       <property name="organisms" value="3398 3817 3818 130453 130454"/> -->
-<!--       <property name="dataSetTitle" value="LIS Arachis data"/> -->
-<!--       <property name="dataSourceName" value="LIS Tripal database"/> -->
-<!--       <property name="converter.class" value="org.intermine.bio.dataconversion.ChadoDBConverter"/> -->
-<!--       <property name="processors" value="org.intermine.bio.dataconversion.GeneticProcessor"/> -->
-<!--     </source> -->
+    <source name="chado-genetics" type="legfed" dump="true">
+      <property name="source.db.name" value="tripal"/>
+      <property name="organisms" value="3398 3817 3818 130453 130454"/>
+      <property name="dataSetTitle" value="LIS Arachis data"/>
+      <property name="dataSourceName" value="LIS Tripal database"/>
+      <property name="converter.class" value="org.intermine.bio.dataconversion.ChadoDBConverter"/>
+      <property name="processors" value="org.intermine.bio.dataconversion.GeneticProcessor"/>
+    </source>
 
     <!-- chado featureprop attributes -->
-<!--     <source name="chado-featureprop" type="legfed" dump="true"> -->
-<!--       <property name="source.db.name" value="tripal"/> -->
-<!--       <property name="organisms" value="3398 3817 3818 130453 130454"/> -->
-<!--       <property name="dataSetTitle" value="LIS Arachis data"/> -->
-<!--       <property name="dataSourceName" value="LIS Tripal database"/> -->
-<!--       <property name="converter.class" value="org.intermine.bio.dataconversion.ChadoDBConverter"/> -->
-<!--       <property name="processors" value="org.intermine.bio.dataconversion.FeaturePropProcessor"/> -->
-<!--     </source> -->
+    <source name="chado-featureprop" type="legfed" dump="true">
+      <property name="source.db.name" value="tripal"/>
+      <property name="organisms" value="3398 3817 3818 130453 130454"/>
+      <property name="dataSetTitle" value="LIS Arachis data"/>
+      <property name="dataSourceName" value="LIS Tripal database"/>
+      <property name="converter.class" value="org.intermine.bio.dataconversion.ChadoDBConverter"/>
+      <property name="processors" value="org.intermine.bio.dataconversion.FeaturePropProcessor"/>
+    </source>
 
     <!-- chado GO annotation -->
-<!--     <source name="chado-go" type="legfed" dump="true"> -->
-<!--       <property name="source.db.name" value="tripal"/> -->
-<!--       <property name="organisms" value="3398 3817 3818 130453 130454"/> -->
-<!--       <property name="dataSetTitle" value="LIS Arachis data"/> -->
-<!--       <property name="dataSourceName" value="LIS Tripal database"/> -->
-<!--       <property name="converter.class" value="org.intermine.bio.dataconversion.ChadoDBConverter"/> -->
-<!--       <property name="processors" value="org.intermine.bio.dataconversion.GOProcessor"/> -->
-<!--     </source> -->
+    <source name="chado-go" type="legfed" dump="true">
+      <property name="source.db.name" value="tripal"/>
+      <property name="organisms" value="3398 3817 3818 130453 130454"/>
+      <property name="dataSetTitle" value="LIS Arachis data"/>
+      <property name="dataSourceName" value="LIS Tripal database"/>
+      <property name="converter.class" value="org.intermine.bio.dataconversion.ChadoDBConverter"/>
+      <property name="processors" value="org.intermine.bio.dataconversion.GOProcessor"/>
+    </source>
     
+    <!-- genetic marker genomic locations from GFF file -->
+    <source name="gff-geneticmarkers" type="legfed" dump="true">
+      <property name="source.db.name" value="tripal"/>
+      <property name="organisms" value="130453"/>
+      <property name="geneticMarkerGffFile" value="/home/intermine/data/nagyguo2012.gff3"/>
+      <property name="dataSetTitle" value="Peanutbase NaguGuo2012 genetic markers GFF dump"/>
+      <property name="dataSourceName" value="LIS Tripal database"/>
+      <property name="converter.class" value="org.intermine.bio.dataconversion.ChadoDBConverter"/>
+      <property name="processors" value="org.intermine.bio.dataconversion.GeneticMarkerGFFProcessor"/>
+    </source>
+
+    <!-- duranensis to ipaensis synteny from GFF file -->
+    <source name="file-synteny" type="legfed" dump="true">
+      <property name="source.db.name" value="tripal"/>
+      <property name="organisms" value="130453 130454"/>
+      <property name="dagChainerFile" location="/home/intermine/data/synteny.130453_with_130454.gff3"/>
+      <property name="dataSetTitle" value="Peanutbase synteny dump"/>
+      <property name="dataSourceName" value="LIS Tripal database"/>
+      <property name="converter.class" value="org.intermine.bio.dataconversion.ChadoDBConverter"/>
+      <property name="processors" value="org.intermine.bio.dataconversion.SyntenyProcessor"/>
+    </source>
+
     <!-- gene ontology -->
     <source name="go" type="go">
         <property name="src.data.file" location="/home/intermine/data/go-annotation/go.obo"/>
