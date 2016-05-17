@@ -55,21 +55,6 @@
     <tabledisplayer src="/model/dataSourceShort.jsp"/>
   </class>
 
-  <class className="org.intermine.model.bio.Gene">
-    <fields>
-      <fieldconfig fieldExpr="organism.name" label="Organism"/>
-      <fieldconfig fieldExpr="primaryIdentifier"/>
-      <fieldconfig fieldExpr="length" displayer="/model/sequenceShortDisplayerWithField.jsp" />
-      <!-- <fieldconfig fieldExpr="chromosomeLocation" displayer="/model/chromosomeLocDisplayer.jsp" showInResults="false" /> -->
-      <fieldconfig fieldExpr="chromosome.primaryIdentifier" showInInlineCollection="true" showInSummary="false" label="Chromosome" />
-      <fieldconfig fieldExpr="chromosomeLocation.start" showInInlineCollection="true" showInSummary="false" label="Start" />
-      <fieldconfig fieldExpr="chromosomeLocation.end" showInInlineCollection="true" showInSummary="false" label="End" />
-      <fieldconfig fieldExpr="supercontig.primaryIdentifier" showInInlineCollection="true" showInSummary="false" label="Supercontig" />
-      <fieldconfig fieldExpr="supercontigLocation.start" showInInlineCollection="true" showInSummary="false" label="Start" />
-      <fieldconfig fieldExpr="supercontigLocation.end" showInInlineCollection="true" showInSummary="false" label="End" />
-    </fields>
-  </class>
-
   <class className="org.intermine.model.bio.Location">
     <fields>
       <fieldconfig fieldExpr="feature.primaryIdentifier" label="DB identifier"/>
@@ -79,11 +64,22 @@
     </fields>
   </class>
 
+  <!-- have to have a Gene entry so the gene enrichment widget works; drop chromosome and supercontig so the list analysis page list works -->
+  <class className="org.intermine.model.bio.Gene">
+    <fields>
+      <fieldconfig fieldExpr="organism.name" label="Organism"/>
+      <fieldconfig fieldExpr="secondaryIdentifier"/>
+      <fieldconfig fieldExpr="note"/>
+      <fieldconfig fieldExpr="length" displayer="/model/sequenceShortDisplayerWithField.jsp" />
+    </fields>
+  </class>
+
+  <!-- supercontig breaks the list on the list analysis page for items other than genes, but it's important to show it since not all features are on chromosomes -->
   <class className="org.intermine.model.bio.SequenceFeature">
     <fields>
+      <fieldconfig fieldExpr="organism.name" label="Organism"/>
       <fieldconfig fieldExpr="primaryIdentifier"/>
       <fieldconfig fieldExpr="length" displayer="/model/sequenceShortDisplayerWithField.jsp" />
-      <!-- <fieldconfig fieldExpr="chromosomeLocation" displayer="/model/chromosomeLocDisplayer.jsp" showInResults="false" /> -->
       <fieldconfig fieldExpr="chromosome.primaryIdentifier" showInInlineCollection="true" showInSummary="false" label="Chromosome" />
       <fieldconfig fieldExpr="chromosomeLocation.start" showInInlineCollection="true" showInSummary="false" label="Start" />
       <fieldconfig fieldExpr="chromosomeLocation.end" showInInlineCollection="true" showInSummary="false" label="End" />
@@ -274,17 +270,6 @@
     </fields>
   </class>
 
-  <class className="org.intermine.model.bio.SyntenyBlock">
-    <headerconfig>
-      <titles>
-        <title mainTitles="primaryIdentifier" numberOfMainTitlesToShow="1" />
-      </titles>
-    </headerconfig>
-    <fields>
-      <fieldconfig fieldExpr="primaryIdentifier" label="Name"/>
-      <fieldconfig fieldExpr="medianKs"/>
-    </fields>
-  </class>
 
   <!-- exporters -->
   <tableExportConfig id="sequence" className="org.intermine.bio.web.export.SequenceHttpExporter"/>
@@ -332,8 +317,8 @@
                     domainLabel="Chromosome"
                     filterLabel="Organism"
                     filters="organism.name=[list]"
-                    startClass="Gene"
-                    typeClass="Gene"
+                    startClass="SequenceFeature"
+                    typeClass="SequenceFeature"
                     categoryPath="chromosome.primaryIdentifier"
                     seriesLabels="Actual,Expected"
                     seriesPath="ActualExpectedCriteria"
@@ -341,7 +326,7 @@
                     views="primaryIdentifier, symbol, secondaryIdentifier, organism.name, chromosome.primaryIdentifier,
                            chromosomeLocation.start, chromosomeLocation.end, chromosomeLocation.strand"/>
 
-    <!-- skip biological_process, molecular_function and cellular_component -->
+    <!-- constraints skip biological_process, molecular_function and cellular_component GO terms -->
     <enrichmentwidgetdisplayer id="go_enrichment_for_gene"
                                title="Gene Ontology Enrichment"
                                description="GO terms enriched for items in this list."
@@ -349,6 +334,7 @@
                                filterLabel="Ontology"
                                filters="biological_process,cellular_component,molecular_function"
                                startClass="Gene"
+                               typeClass="Gene"
                                startClassDisplay="primaryIdentifier"
                                enrich="goAnnotation.ontologyTerm.parents.name"
                                enrichIdentifier="goAnnotation.ontologyTerm.parents.identifier"
@@ -357,7 +343,6 @@
                                             goAnnotation.ontologyTerm.parents.identifier != go:0008150,
                                             goAnnotation.ontologyTerm.parents.identifier != go:0003674,
                                             goAnnotation.ontologyTerm.parents.identifier != go:0005575"
-                               typeClass="Gene"
                                views="secondaryIdentifier,symbol,primaryIdentifier,organism.name,
                                       goAnnotation.ontologyTerm.identifier, goAnnotation.ontologyTerm.name,
                                       goAnnotation.ontologyTerm.parents.identifier,goAnnotation.ontologyTerm.parents.name"

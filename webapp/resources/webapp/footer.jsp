@@ -44,10 +44,10 @@
 
         <!-- LegFed and relevant mines -->
         <li><a href="http://intermine.ncgr.org/legumemine/begin.do" target="_blank">LegFed LegumeMine (various legumes)</a></li>
-        <li><a href="http://intermine.ncgr.org/beanmine/begin.do" target="_blank"> BeanMine (string bean)</a></li>
-        <li><a href="http://intermine.ncgr.org/soymine/begin.do" target="_blank"> Soymine (soybean)</a></li>
-	<li><a href="http://intermine.ncgr.org/peanutmine/begin.do" target="_blank"> PeanutMine (several peanut species)</a></li>
-        <li><a href="http://medicmine.jcvi.org/medicmine/begin.do" target="_blank">JCVI MedicMine (medicago)</a></li>
+        <li><a href="http://intermine.ncgr.org/beanmine/begin.do" target="_blank">LIS BeanMine (string bean)</a></li>
+        <li><a href="http://intermine.ncgr.org/soymine/begin.do" target="_blank">LIS Soymine (soybean)</a></li>
+	<li><a href="http://intermine.ncgr.org/peanutmine/begin.do" target="_blank">LIS PeanutMine (several peanut species)</a></li>
+        <li><a href="http://medicmine.jcvi.org/medicmine/begin.do" target="_blank">JCVI MedicMine (Medicago)</a></li>
 
     </ul>
 
