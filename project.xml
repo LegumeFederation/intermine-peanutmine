@@ -19,51 +19,64 @@
 
     <!-- chado genomics - run first after so, go -->
     <source name="chado-genomics" type="legfed-chado-db" dump="true">
-      <property name="source.db.name" value="tripal"/>
+      <property name="source.db.name" value="peanutbase"/>
       <property name="organisms" value="3398 3817 3818 130453 130454"/>
       <property name="dataSetTitle" value="LIS Arachis data"/>
-      <property name="dataSourceName" value="LIS Tripal database"/>
+      <property name="dataSourceName" value="LIS Peanutbase database"/>
       <property name="converter.class" value="org.intermine.bio.dataconversion.ChadoDBConverter"/>
       <property name="processors" value="org.intermine.bio.dataconversion.SequenceProcessor"/>
     </source>
 
     <!-- chado genetics -->
     <source name="chado-genetics" type="legfed-chado-db" dump="true">
-      <property name="source.db.name" value="tripal"/>
+      <property name="source.db.name" value="peanutbase"/>
       <property name="organisms" value="3398 3817 3818 130453 130454"/>
+      <property name="phytozome.version" value="phytozome_10_2"/>
       <property name="dataSetTitle" value="LIS Arachis data"/>
-      <property name="dataSourceName" value="LIS Tripal database"/>
+      <property name="dataSourceName" value="LIS Peanutbase database"/>
       <property name="converter.class" value="org.intermine.bio.dataconversion.ChadoDBConverter"/>
       <property name="processors" value="org.intermine.bio.dataconversion.GeneticProcessor"/>
     </source>
 
     <!-- chado featureprop attributes -->
     <source name="chado-featureprop" type="legfed-chado-db" dump="true">
-      <property name="source.db.name" value="tripal"/>
+      <property name="source.db.name" value="peanutbase"/>
       <property name="organisms" value="3398 3817 3818 130453 130454"/>
       <property name="dataSetTitle" value="LIS Arachis data"/>
-      <property name="dataSourceName" value="LIS Tripal database"/>
+      <property name="dataSourceName" value="LIS Peanutbase database"/>
       <property name="converter.class" value="org.intermine.bio.dataconversion.ChadoDBConverter"/>
       <property name="processors" value="org.intermine.bio.dataconversion.FeaturePropProcessor"/>
     </source>
 
+    <!-- chado homology attributes -->
+    <source name="chado-homology" type="legfed-chado-db" dump="true">
+      <property name="source.db.name" value="drupal"/>
+      <property name="organisms" value="130453 130454"/>
+      <property name="homologue.organisms" value="3702 3847 3880 3885 130453 130454"/>
+      <property name="phytozome.version" value="phytozome_10_2"/>
+      <property name="dataSetTitle" value="LIS core chado"/>
+      <property name="dataSourceName" value="LIS core chado database"/>
+      <property name="converter.class" value="org.intermine.bio.dataconversion.ChadoDBConverter"/>
+      <property name="processors" value="org.intermine.bio.dataconversion.HomologyProcessor"/>
+    </source>
+
     <!-- chado GO annotation -->
     <source name="chado-go" type="legfed-chado-db" dump="true">
-      <property name="source.db.name" value="tripal"/>
+      <property name="source.db.name" value="peanutbase"/>
       <property name="organisms" value="3398 3817 3818 130453 130454"/>
       <property name="dataSetTitle" value="LIS Arachis data"/>
-      <property name="dataSourceName" value="LIS tripal.chado"/>
+      <property name="dataSourceName" value="LIS peanutbase.chado"/>
       <property name="converter.class" value="org.intermine.bio.dataconversion.ChadoDBConverter"/>
       <property name="processors" value="org.intermine.bio.dataconversion.GOAnnotationProcessor"/>
     </source>
     
     <!-- chado + reactome file -->
     <source name="chado-reactome-file" type="legfed-chado-db" dump="true">
-      <property name="source.db.name" value="tripal"/>
+      <property name="source.db.name" value="peanutbase"/>
       <property name="reactome.filename" location="/home/intermine/data/plant-reactome/reactome.txt"/>
       <property name="organisms" value="130453 130454"/>
-      <property name="dataSetTitle" value="LIS Arachis data"/>
-      <property name="dataSourceName" value="LIS Tripal database"/>
+      <property name="dataSetTitle" value="LIS Peanutbase chado DB"/>
+      <property name="dataSourceName" value="LIS Peanutbase chado DB"/>
       <property name="converter.class" value="org.intermine.bio.dataconversion.ChadoDBConverter"/>
       <property name="processors" value="org.intermine.bio.dataconversion.ReactomeProcessor"/>
     </source>

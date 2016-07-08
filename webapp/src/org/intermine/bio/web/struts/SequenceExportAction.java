@@ -38,7 +38,6 @@ import org.intermine.bio.web.export.ResidueFieldExporter;
 import org.intermine.model.InterMineObject;
 import org.intermine.model.bio.BioEntity;
 import org.intermine.model.bio.MRNA;
-import org.intermine.model.bio.Polypeptide;
 import org.intermine.model.bio.Protein;
 import org.intermine.model.bio.Sequence;
 import org.intermine.model.bio.SequenceFeature;
@@ -85,7 +84,7 @@ public class SequenceExportAction extends InterMineAction
         Integer objectId = new Integer(request.getParameter("object"));
         InterMineObject obj = getObject(os, webProps, objectId);
 
-        if (obj instanceof SequenceFeature || obj instanceof Protein || obj instanceof Polypeptide) {
+        if (obj instanceof SequenceFeature || obj instanceof Protein) {
             bioSequence = createBioSequence(obj);
 
             response.setContentType("text/plain");
@@ -105,7 +104,7 @@ public class SequenceExportAction extends InterMineAction
     private BioSequence createBioSequence(InterMineObject obj) throws IllegalSymbolException, IllegalAccessException, ChangeVetoException {
         BioSequence bioSequence;
         BioEntity bioEntity = (BioEntity) obj;
-        if (obj instanceof Protein || obj instanceof Polypeptide) {
+        if (obj instanceof Protein) {
             bioSequence = BioSequenceFactory.make(bioEntity, SequenceType.PROTEIN);
         } else {
             bioSequence = BioSequenceFactory.make(bioEntity, SequenceType.DNA);
@@ -148,7 +147,6 @@ public class SequenceExportAction extends InterMineAction
         } else {
             classList.addAll(Arrays.asList(new Class<?>[] {
                         Protein.class,
-                            Polypeptide.class,
                             SequenceFeature.class
             }));
         }

@@ -1,13 +1,5 @@
 #!/bin/sh
 echo "********** peanutmine/integrate **********"
 ant clean
-#ant -Dsource=go
-#ant -Dsource=so
-ant -Dsource=chado-genomics
-ant -Dsource=chado-genetics
-ant -Dsource=chado-featureprop
-ant -Dsource=chado-go
-ant -Dsource=chado-reactome-file
-ant -Dsource=gff-geneticmarkers
-ant -Dsource=file-synteny
-ant -Dsource=entrez-organism
+#ant -Dsource=so,go
+ant -Dsource=chado-genomics,chado-genetics,chado-featureprop,chado-homology,chado-go,chado-reactome-file,gff-geneticmarkers,file-synteny,entrez-organism
