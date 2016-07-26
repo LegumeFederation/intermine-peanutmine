@@ -50,7 +50,7 @@
 
     <!-- chado homology attributes -->
     <source name="chado-homology" type="legfed-chado-db" dump="true">
-      <property name="source.db.name" value="drupal"/>
+      <property name="source.db.name" value="chado"/>
       <property name="organisms" value="130453 130454"/>
       <property name="homologue.organisms" value="3702 3847 3880 3885 130453 130454"/>
       <property name="phytozome.version" value="phytozome_10_2"/>
