@@ -44,3 +44,11 @@
 <!-- End of Genomic Region Search configuration -->
 
 <action path="/initFriendlyMineLinkDisplayer" type="org.intermine.bio.web.FriendlyMineLinkController"/>
+
+
+
+<!-- Heat Map -->
+<action path="/initHeatMap"
+        type="org.ncgr.intermine.web.HeatMapController" />
+
+<action path="/heatMap" forward="heatMap.page" />

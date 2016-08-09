@@ -91,6 +91,11 @@
       <property name="src.data.dir" location="/home/intermine/data/peanut-synteny"/>
     </source>
       
+    <!-- peanutbase expression -->
+    <source name="peanutbase-expression" type="legfed-expression" dump="true">
+      <property name="src.data.dir" location="/home/intermine/data/peanutbase-expression"/>
+    </source>
+
     <!-- update organism records -->
     <source name="entrez-organism" type="entrez-organism">
       <property name="src.data.file" location="build/organisms.xml"/>
@@ -101,7 +106,7 @@
   <post-processing>
 
     <!-- legfed -->
-    <post-process name="create-polypeptide-gene-references" dump="true"/>
+    <post-process name="create-protein-gene-references" dump="true"/>
     <post-process name="populate-gene-spanning-qtls" dump="true"/>
 
     <!-- order matters! -->

@@ -2,4 +2,4 @@
 echo "********** peanutmine/integrate **********"
 ant clean
 #ant -Dsource=so,go
-ant -Dsource=chado-genomics,chado-genetics,chado-featureprop,chado-homology,chado-go,chado-reactome-file,gff-geneticmarkers,file-synteny,entrez-organism
+ant -Dsource=chado-genomics,chado-genetics,chado-featureprop,chado-homology,chado-go,chado-reactome-file,gff-geneticmarkers,file-synteny,peanutbase-expression,entrez-organism

@@ -57,19 +57,21 @@
 
   <class className="org.intermine.model.bio.Location">
     <fields>
-      <fieldconfig fieldExpr="feature.primaryIdentifier" label="DB identifier"/>
+      <fieldconfig fieldExpr="feature.primaryIdentifier" label="Feature"/>
+      <fieldconfig fieldExpr="locatedOn.primaryIdentifier" label="Located On"/>
       <fieldconfig fieldExpr="start"/>
       <fieldconfig fieldExpr="end"/>
       <fieldconfig fieldExpr="strand"/>
     </fields>
   </class>
 
-  <!-- have to have a Gene entry so the gene enrichment widget works; drop chromosome and supercontig so the list analysis page list works -->
+  <!-- have to have a Gene entry so the gene enrichment widget works; supercontig so the list analysis page shows chromosomal genes at least -->
   <class className="org.intermine.model.bio.Gene">
     <fields>
       <fieldconfig fieldExpr="organism.name" label="Organism"/>
       <fieldconfig fieldExpr="primaryIdentifier" label="DB identifier"/>
       <fieldconfig fieldExpr="length" displayer="/model/sequenceShortDisplayerWithField.jsp" />
+      <fieldconfig fieldExpr="chromosome.primaryIdentifier" showInInlineCollection="true" showInSummary="false" label="Chromosome" />
       <fieldconfig fieldExpr="note"/>
     </fields>
   </class>
@@ -77,7 +79,7 @@
   <class className="org.intermine.model.bio.Homologue">
     <fields>
       <fieldconfig fieldExpr="homologue.organism.name" label="Organism"/>
-      <fieldconfig fieldExpr="homologue.primaryIdentifier" label="DB indentifier"/>
+      <fieldconfig fieldExpr="homologue.primaryIdentifier" label="DB identifier"/>
     </fields>
   </class>
 
@@ -100,6 +102,16 @@
     <fields>
       <fieldconfig fieldExpr="primaryIdentifier" label="DB identifier"/>
       <fieldconfig fieldExpr="length" displayer="/model/sequenceShortDisplayerWithField.jsp" />
+    </fields>
+  </class>
+
+  <class className="org.intermine.model.bio.ProteinDomain">
+    <fields>
+      <fieldconfig fieldExpr="primaryIdentifier" label="DB identifier"/>
+      <fieldconfig fieldExpr="name" label="Name"/>
+      <fieldconfig fieldExpr="interproId" label="Interpro ID"/>
+      <fieldconfig fieldExpr="interproShortName" label="Interpro Short Name"/>
+      <fieldconfig fieldExpr="interproName" label="Interpro Name"/>
     </fields>
   </class>
 
@@ -197,18 +209,17 @@
     </fields>
   </class>
 
+  <!-- add the heat map to Transcript bags; drop supercontig so the list analysis page shows chromosomal mRNAs at least -->
   <class className="org.intermine.model.bio.Transcript">
     <fields>
       <fieldconfig fieldExpr="organism.name" label="Organism"/>
       <fieldconfig fieldExpr="primaryIdentifier" label="DB identifier"/>
       <fieldconfig fieldExpr="length" displayer="/model/sequenceShortDisplayerWithField.jsp" />
       <fieldconfig fieldExpr="chromosome.primaryIdentifier" showInInlineCollection="true" showInSummary="false" label="Chromosome" />
-      <fieldconfig fieldExpr="chromosomeLocation.start" showInInlineCollection="true" showInSummary="false" label="Start" />
-      <fieldconfig fieldExpr="chromosomeLocation.end" showInInlineCollection="true" showInSummary="false" label="End" />
-      <fieldconfig fieldExpr="supercontig.primaryIdentifier" showInInlineCollection="true" showInSummary="false" label="Supercontig" />
-      <fieldconfig fieldExpr="supercontigLocation.start" showInInlineCollection="true" showInSummary="false" label="Start" />
-      <fieldconfig fieldExpr="supercontigLocation.end" showInInlineCollection="true" showInSummary="false" label="End" />
     </fields>
+    <bagdisplayers>
+      <displayer src="heatMap.tile" showOnLeft="true"/>
+    </bagdisplayers>
   </class>
 
   <class className="org.intermine.model.bio.LinkageGroup">
@@ -287,6 +298,51 @@
       <fieldconfig fieldExpr="name" label="Name"/>
     </fields>
   </class>
+
+  <class className="org.intermine.model.bio.ConsensusRegion">
+    <fields>
+      <fieldconfig fieldExpr="primaryIdentifier" label="DB Identifier"/>
+      <fieldconfig fieldExpr="geneFamily.primaryIdentifier" label="Gene Family"/>
+      <fieldconfig fieldExpr="length" displayer="/model/sequenceShortDisplayerWithField.jsp" />
+    </fields>
+  </class>
+
+  <class className="org.intermine.model.bio.ExpressionSource">
+    <headerconfig>
+      <titles>
+        <title mainTitles="primaryIdentifier" numberofMainTitlesToShow="1" />
+      </titles>
+    </headerconfig>
+    <fields>
+      <fieldconfig fieldExpr="primaryIdentifier" label="Name"/>
+      <fieldconfig fieldExpr="geo" label="NCBI GEO Accession"/>
+      <fieldconfig fieldExpr="bioProject" label="NCBI BioProject Accession"/>
+      <fieldconfig fieldExpr="sra" label="NCBI SRA Accession"/>
+    </fields>
+  </class>
+
+  <class className="org.intermine.model.bio.ExpressionSample">
+    <headerconfig>
+      <titles>
+        <title mainTitles="primaryIdentifier" numberofMainTitlesToShow="1" />
+      </titles>
+    </headerconfig>
+    <fields>
+      <fieldconfig fieldExpr="primaryIdentifier" label="Name"/>
+      <fieldconfig fieldExpr="description" label="Description"/>
+    </fields>
+  </class>
+
+  <class className="org.intermine.model.bio.ExpressionValue">
+    <fields>
+      <fieldconfig fieldExpr="expressionSample.source.primaryIdentifier" label="Source"/>
+      <fieldconfig fieldExpr="expressionSample.primaryIdentifier" label="Sample"/>
+      <fieldconfig fieldExpr="expressionSample.description" label="Description"/>
+      <fieldconfig fieldExpr="value" label="Value"/>
+      <fieldconfig fieldExpr="unit" label="Unit"/>
+    </fields>
+  </class>
+
 
 
   <!-- exporters -->
