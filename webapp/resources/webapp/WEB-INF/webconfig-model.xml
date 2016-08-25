@@ -72,7 +72,6 @@
       <fieldconfig fieldExpr="primaryIdentifier" label="DB identifier"/>
       <fieldconfig fieldExpr="length" displayer="/model/sequenceShortDisplayerWithField.jsp" />
       <fieldconfig fieldExpr="chromosome.primaryIdentifier" showInInlineCollection="true" showInSummary="false" label="Chromosome" />
-      <fieldconfig fieldExpr="note"/>
       <fieldconfig fieldExpr="description"/>
     </fields>
   </class>
