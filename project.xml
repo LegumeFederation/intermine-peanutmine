@@ -20,7 +20,7 @@
     <!-- chado genomics - run first after so, go -->
     <source name="chado-genomics" type="legfed-chado-db" dump="true">
       <property name="source.db.name" value="peanutbase"/>
-      <property name="organisms" value="3398 3817 3818 130453 130454"/>
+      <property name="organisms" value="3398 3817 3818 130453 130454 3817 227691 217475 108213 108210 51121 170720 130453 3818 130454 224334 281005 281006 224333 281007 108211 281008 212810 281009 281010 224330 108212 167724 281011 224332 281012 281013 281014 108214 227692 281015 108215 224337 281016 281017 224339 281018 224335 215278 224336 224338 281020 224331 108217 281021 281022"/>
       <property name="dataSetTitle" value="LIS Arachis data"/>
       <property name="dataSourceName" value="LIS Peanutbase database"/>
       <property name="converter.class" value="org.intermine.bio.dataconversion.ChadoDBConverter"/>
@@ -30,7 +30,7 @@
     <!-- chado genetics -->
     <source name="chado-genetics" type="legfed-chado-db" dump="true">
       <property name="source.db.name" value="peanutbase"/>
-      <property name="organisms" value="3398 3817 3818 130453 130454"/>
+      <property name="organisms" value="3398 3817 3818 130453 130454 3817 227691 217475 108213 108210 51121 170720 130453 3818 130454 224334 281005 281006 224333 281007 108211 281008 212810 281009 281010 224330 108212 167724 281011 224332 281012 281013 281014 108214 227692 281015 108215 224337 281016 281017 224339 281018 224335 215278 224336 224338 281020 224331 108217 281021 281022"/>
       <property name="phytozome.version" value="phytozome_10_2"/>
       <property name="dataSetTitle" value="LIS Arachis data"/>
       <property name="dataSourceName" value="LIS Peanutbase database"/>
@@ -41,7 +41,7 @@
     <!-- chado featureprop attributes -->
     <source name="chado-featureprop" type="legfed-chado-db" dump="true">
       <property name="source.db.name" value="peanutbase"/>
-      <property name="organisms" value="3398 3817 3818 130453 130454"/>
+      <property name="organisms" value="3398 3817 3818 130453 130454 3817 227691 217475 108213 108210 51121 170720 130453 3818 130454 224334 281005 281006 224333 281007 108211 281008 212810 281009 281010 224330 108212 167724 281011 224332 281012 281013 281014 108214 227692 281015 108215 224337 281016 281017 224339 281018 224335 215278 224336 224338 281020 224331 108217 281021 281022"/>
       <property name="dataSetTitle" value="LIS Arachis data"/>
       <property name="dataSourceName" value="LIS Peanutbase database"/>
       <property name="converter.class" value="org.intermine.bio.dataconversion.ChadoDBConverter"/>
@@ -63,7 +63,7 @@
     <!-- chado GO annotation -->
     <source name="chado-go" type="legfed-chado-db" dump="true">
       <property name="source.db.name" value="peanutbase"/>
-      <property name="organisms" value="3398 3817 3818 130453 130454"/>
+      <property name="organisms" value="3398 3817 3818 130453 130454 3817 227691 217475 108213 108210 51121 170720 130453 3818 130454 224334 281005 281006 224333 281007 108211 281008 212810 281009 281010 224330 108212 167724 281011 224332 281012 281013 281014 108214 227692 281015 108215 224337 281016 281017 224339 281018 224335 215278 224336 224338 281020 224331 108217 281021 281022"/>
       <property name="dataSetTitle" value="LIS Arachis data"/>
       <property name="dataSourceName" value="LIS peanutbase.chado"/>
       <property name="converter.class" value="org.intermine.bio.dataconversion.ChadoDBConverter"/>
@@ -92,8 +92,8 @@
     </source>
       
     <!-- peanutbase expression -->
-    <source name="peanutbase-expression" type="legfed-expression" dump="true">
-      <property name="src.data.dir" location="/home/intermine/data/peanutbase-expression"/>
+    <source name="peanut-expression" type="legfed-expression" dump="true">
+      <property name="src.data.dir" location="/home/intermine/data/peanut-expression"/>
     </source>
 
     <!-- update organism records -->
@@ -109,19 +109,24 @@
     <post-process name="do-sources" dump="true"/>
 
     <!-- legfed -->
-    <post-process name="create-protein-gene-references" dump="true"/>
     <post-process name="populate-gene-spanning-qtls" dump="true"/>
+    <post-process name="create-protein-gene-references" dump="true"/>
     <post-process name="create-protein-domain-references" dump="true"/>
     <post-process name="populate-interpro-data" dump="true"/>
-
-    <!-- order matters! -->
+    
+    <!-- add features -->
+    <post-process name="create-intron-features"/>
+    <post-process name="create-intergenic-region-features"/>
+    <post-process name="create-gene-flanking-features"/> 
+   
+    <!-- create various references and collections -->
     <post-process name="populate-located-features"/>
+    <post-process name="populate-child-features"/>
     <post-process name="create-references" />
     <post-process name="create-chromosome-locations-and-lengths"/>
-    <post-process name="create-intergenic-region-features"/>
     <post-process name="transfer-sequences"/>
-    <post-process name="populate-child-features"/>
-    <post-process name="create-location-range-index"/>
+
+    <!-- views and indexes, after all data is set -->
     <post-process name="create-location-overlap-index"/>
     <post-process name="create-overlap-view" />
     <post-process name="create-attribute-indexes"/>

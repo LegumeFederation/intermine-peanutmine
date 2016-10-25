@@ -65,15 +65,25 @@
     </fields>
   </class>
 
-  <!-- Gene drops start and end in favor of description -->
+  <!-- have to have a Gene entry so the gene enrichment widget works; yanked supercontig so the list analysis page shows chromosomal genes at least -->
   <class className="org.intermine.model.bio.Gene">
     <fields>
       <fieldconfig fieldExpr="organism.name" label="Organism"/>
       <fieldconfig fieldExpr="primaryIdentifier" label="DB identifier"/>
       <fieldconfig fieldExpr="length" displayer="/model/sequenceShortDisplayerWithField.jsp" />
       <fieldconfig fieldExpr="chromosome.primaryIdentifier" showInInlineCollection="true" showInSummary="false" label="Chromosome" />
-      <fieldconfig fieldExpr="description"/>
     </fields>
+  </class>
+
+  <class className="org.intermine.model.bio.GeneFlankingRegion">
+    <fields>
+      <fieldconfig fieldExpr="primaryIdentifier" label="DB identifier"/>
+      <fieldconfig fieldExpr="length" displayer="/model/sequenceShortDisplayerWithField.jsp" />
+      <fieldconfig fieldExpr="gene.primaryIdentifier" label="Gene"/>
+    </fields>
+    <bagdisplayers>
+      <displayer src="motifSearch.tile" showOnLeft="true"/>
+    </bagdisplayers>
   </class>
 
   <class className="org.intermine.model.bio.Homologue">
@@ -83,12 +93,11 @@
     </fields>
   </class>
 
-  <!-- It'd be nice to be able to include supercontig, but it breaks the list analysis page list which has an all-or-nothing logic behind it -->
   <class className="org.intermine.model.bio.SequenceFeature">
     <fields>
       <fieldconfig fieldExpr="organism.name" label="Organism"/>
       <fieldconfig fieldExpr="primaryIdentifier" label="DB identifier"/>
-      <fieldconfig fieldExpr="length" displayer="/model/sequenceShortDisplayerWithField.jsp" />
+      <fieldconfig fieldExpr="length" displayer="/model/sequenceShortDisplayerWithField.jsp" showInInlineCollection="true" showInSummary="true" />
       <fieldconfig fieldExpr="chromosome.primaryIdentifier" showInInlineCollection="true" showInSummary="false" label="Chromosome" />
       <fieldconfig fieldExpr="chromosomeLocation.start" showInInlineCollection="true" showInSummary="false" label="Start" />
       <fieldconfig fieldExpr="chromosomeLocation.end" showInInlineCollection="true" showInSummary="false" label="End" />
@@ -385,6 +394,18 @@
                      replacesFields=""
                      placement="Genomics"
                      types="SequenceFeature"/>
+
+    <reportdisplayer javaClass="org.intermine.bio.web.displayer.LinkageGroupDisplayer"
+                     jspName="model/linkageGroupDiagram.jsp"
+                     replacesFields="QTLs,geneticMarkers"
+                     placement="summary"
+                     types="LinkageGroup"/>
+
+    <reportdisplayer javaClass="org.intermine.bio.web.displayer.GeneticMapDisplayer"
+                     jspName="model/linkageGroupDiagram.jsp"
+                     replacesFields="linkageGroups,geneticMarkers"
+                     placement="summary"
+                     types="GeneticMap"/>
 
   </reportdisplayers>
 

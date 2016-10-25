@@ -92,7 +92,6 @@
                         <h3><c:out value="${WEB_PROPERTIES['begin.thirdBox.title']}" /></h3>
                     </c:otherwise>
                 </c:choose>
-                <br />
                 <c:choose>
                     <c:when test="${!isNewUser && !empty (WEB_PROPERTIES['begin.thirdBox.visitedDescription'])}">
                         <p><c:out value="${WEB_PROPERTIES['begin.thirdBox.visitedDescription']}" escapeXml="false" /></p>
@@ -103,29 +102,22 @@
                 </c:choose>
                 <c:if test="${!empty WEB_PROPERTIES['begin.thirdBox.linkTitle']}">
                     <div class="bottom">
-                        <center>
-                            <c:choose>
-                                <c:when test="${!isNewUser && !empty (WEB_PROPERTIES['begin.thirdBox.visitedLink'])}">
-                                    <a class="button gray" href="<c:out value="${WEB_PROPERTIES['begin.thirdBox.visitedLink']}" />" >
-                                </c:when>
-                                <c:otherwise>
-                                    <a class="button gray" href="<c:out value="${WEB_PROPERTIES['begin.thirdBox.link']}" />" >
-                                </c:otherwise>
-                            </c:choose>
-                            <div>
-                                <span>
-                                    <c:choose>
-                                        <c:when test="${!isNewUser && !empty (WEB_PROPERTIES['begin.thirdBox.visitedLinkTitle'])}">
-                                            <c:out value="${WEB_PROPERTIES['begin.thirdBox.visitedLinkTitle']}" />
-                                        </c:when>
-                                        <c:otherwise>
-                                            <c:out value="${WEB_PROPERTIES['begin.thirdBox.linkTitle']}" />
-                                        </c:otherwise>
-                                    </c:choose>
-                                </span>
-                            </div>
+                        <c:choose>
+                            <c:when test="${!isNewUser && !empty (WEB_PROPERTIES['begin.thirdBox.visitedLink'])}">
+                                <div style="margin-left:14px;font-size:1.2em;height:80px;width:250px;text-align:center;background-color:lightgray;border:2px solid gray">
+                                    <a href="<c:out value="${WEB_PROPERTIES['begin.thirdBox.visitedLink']}" />" >
+                                        <c:out value="${WEB_PROPERTIES['begin.thirdBox.visitedLinkTitle']}" />
                                     </a>
-                        </center>
+                                </div>
+                            </c:when>
+                            <c:otherwise>
+                                <div style="margin-left:14px;font-size:1.2em;height:80px;width:250px;text-align:center;background-color:lightgray;border:2px solid gray">
+                                    <a href="<c:out value="${WEB_PROPERTIES['begin.thirdBox.link']}" />" >
+                                        <c:out value="${WEB_PROPERTIES['begin.thirdBox.linkTitle']}" />
+                                    </a>
+                                </div>
+                            </c:otherwise>
+                        </c:choose>
                     </div>
                 </c:if>
             </div>
