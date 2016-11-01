@@ -13,9 +13,9 @@
 <c:set var="MAX_MAP" value="600" />
 <c:set var="MAX_DEFAULT_OPEN" value="100" />
 
-<link rel="stylesheet" href="model/canvasXpress.css" type="text/css"/>
-<script type="text/javascript" src="model/canvasXpress.min.js"></script>
-<!--[if IE]><script type="text/javascript" src="model/canvasXpress/js/excanvas.js"></script><![endif]-->
+<link rel="stylesheet" href="css/canvasXpress.css" type="text/css"/>
+<script type="text/javascript" src="js/canvasXpress.min.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
 
 <div id="expression_div">
 
@@ -101,9 +101,9 @@
 
  var feature_count = parseInt(${FeatureCount});
  var condition_count = parseInt(${ConditionCount});
- var max_cluster = parseInt(${MAX_CLUSTER});
- var max_map = parseInt(${MAX_MAP});
- var max_default_open = parseInt(${MAX_DEFAULT_OPEN});
+ var max_cluster = ${MAX_CLUSTER};
+ var max_map = ${MAX_MAP};
+ var max_default_open = ${MAX_DEFAULT_OPEN};
 
  jQuery(document).ready(
      function () {

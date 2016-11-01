@@ -73,6 +73,9 @@
       <fieldconfig fieldExpr="length" displayer="/model/sequenceShortDisplayerWithField.jsp" />
       <fieldconfig fieldExpr="chromosome.primaryIdentifier" showInInlineCollection="true" showInSummary="false" label="Chromosome" />
     </fields>
+    <bagdisplayers>
+      <displayer src="heatMap.tile" showOnLeft="true"/>
+    </bagdisplayers>
   </class>
 
   <class className="org.intermine.model.bio.GeneFlankingRegion">

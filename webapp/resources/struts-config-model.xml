@@ -46,23 +46,19 @@
 <action path="/initFriendlyMineLinkDisplayer" type="org.intermine.bio.web.FriendlyMineLinkController"/>
 
 <!-- Heat Map -->
-<action path="/initHeatMap"
-        type="org.ncgr.intermine.web.HeatMapController" />
+<action path="/initHeatMap" type="org.ncgr.intermine.web.HeatMapController" />
 
-<action path="/heatMap" forward="heatMap.page" />
+<!-- <action path="/heatMap" forward="heatMap.page" /> -->
 
 <!-- Linkage Group Diagram -->
-<action path="/initLinkageGroupDiagram"
-	type="org.ncgr.intermine.web.LinkageGroupDiagramController" />
+<action path="/initLinkageGroupDiagram" type="org.ncgr.intermine.web.LinkageGroupDiagramController" />
 
-<action path="/linkageGroupDiagram" forward="linkageGroupDiagram.page" />
+<!-- <action path="/linkageGroupDiagram" forward="linkageGroupDiagram.page" /> -->
 
 <!-- MEME analysis -->
-<action path="/initMemeAnalysis"
-        type="org.ncgr.intermine.web.MemeController" />
+<action path="/initMemeAnalysis" type="org.ncgr.intermine.web.MemeController" />
 
 <!-- Motif Search -->
-<action path="/initMotifSearch"
-        type="org.ncgr.intermine.web.MotifSearchController" />
+<action path="/initMotifSearch" type="org.ncgr.intermine.web.MotifSearchController" />
 
 
