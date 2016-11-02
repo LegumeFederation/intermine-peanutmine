@@ -1,12 +1,8 @@
-
+<!-- heatMap.jsp -->
 <%@ taglib uri="/WEB-INF/struts-html.tld" prefix="html" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
-<%@ page import="java.net.URLEncoder" language="java" %>
-
-<!-- heatMap.jsp -->
 <html:xhtml />
-
 <tiles:importAttribute />
 
 <c:set var="MAX_CLUSTER" value="100" />
@@ -15,7 +11,6 @@
 
 <link rel="stylesheet" href="css/canvasXpress.css" type="text/css"/>
 <script type="text/javascript" src="js/canvasXpress.min.js"></script>
-<script type="text/javascript" src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
 
 <div id="expression_div">
 
@@ -43,9 +38,7 @@
             </div>
         </html:link>
 
-
         <div id="heatmapGraph" style="display:block">
-
             <div style="width:500px; margin:5px 0px 5px 100px;">
                 
                 <c:if test="${FeatureCount>MAX_CLUSTER}">
@@ -80,21 +73,19 @@
                         </select>
                     </c:if>
                 </div>
-
+                
             </div>
             
             <canvas id="canvasx" width="${WEB_PROPERTIES['heatmap.width']}" height="${WEB_PROPERTIES['heatmap.height']}"></canvas>
             
         </div>
-        
-        <div id="description_div" style="clear:both; padding-left:10px; font-weight:bold; background-color:gray; color:white;">
-            More information <img src="images/undisclosed.gif" id="co">
-        </div>
-        
-        <div id="description" style="padding:5px">${WEB_PROPERTIES['heatmap.description']}</div>
-
     </div>
-    
+        
+    <div id="description_div" style="clear:both; padding-left:10px; font-weight:bold; background-color:gray; color:white;">
+        More information <img src="images/undisclosed.gif" id="co">
+    </div>
+    <div id="description" style="padding:5px">${WEB_PROPERTIES['heatmap.description']}</div>
+
 </div>
 
 <script type="text/javascript">
