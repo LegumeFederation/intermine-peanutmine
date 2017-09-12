@@ -61,3 +61,6 @@
 <!-- Motif Search -->
 <definition name="motifSearch.tile" path="/model/motifSearch.jsp"
             controllerUrl="/initMotifSearch.do" />
+
+<!-- LIS pages -->
+<definition name="lisLinkDisplayer.tile" path="/model/lisLinkDisplayer.jsp"/>
