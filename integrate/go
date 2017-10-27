@@ -1,5 +1,17 @@
 #!/bin/sh
 echo "********** peanutmine/integrate **********"
 ant clean
-#ant -Dsource=so,go,chado-genomics,chado-genetics,chado-featureprop,chado-homology,chado-go,chado-reactome-file,gff-geneticmarkers,file-synteny,peanut-expression,entrez-organism
-ant -Dsource=file-synteny,peanut-expression,entrez-organism
+
+# ontologies
+#ant -v -Dsource=go,so,to,po
+#pg_restore -d peanutmine /home/analysis/shokin/dumps/peanutmine.xo.dat
+
+# chado
+ant -v -Dsource=chado-genomics,chado-genetics,chado-featureprop,chado-genefamilies,chado-homology,chado-go,chado-reactome-file
+#pg_restore -d peanutmine /home/analysis/shokin/dumps/peanutmine.chado.dat
+
+# update organisms and identifiers
+
+
+# non-chado
+#ant -v -Dsource=gff-geneticmarkers,file-synteny,peanut-expression

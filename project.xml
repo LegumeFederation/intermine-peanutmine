@@ -7,6 +7,96 @@
 
   <sources>
 
+    <!-- LIS chado genomics - run first after so, go -->
+    <source name="chado-genomics" type="legfed-chado-db" dump="true">
+      <property name="source.db.name" value="lis"/>
+      <property name="organisms" value="130453_V14167 130454_K30076"/>
+      <property name="dataSetTitle" value="LIS data"/>
+      <property name="dataSourceName" value="LIS chado database"/>
+      <property name="converter.class" value="org.intermine.bio.dataconversion.ChadoDBConverter"/>
+      <property name="processors" value="org.intermine.bio.dataconversion.SequenceProcessor"/>
+    </source>
+
+    <!-- Peanutbase chado genetics -->
+    <source name="chado-genetics" type="legfed-chado-db" dump="true">
+      <property name="source.db.name" value="peanutbase"/>
+      <property name="organisms" value="130453_V14167 130454_K30076 3818_Various"/>
+      <property name="phytozome.version" value="phytozome_10_2"/>
+      <property name="dataSetTitle" value="Peanutbase data"/>
+      <property name="dataSourceName" value="Peanutbase chado database"/>
+      <property name="converter.class" value="org.intermine.bio.dataconversion.ChadoDBConverter"/>
+      <property name="processors" value="org.intermine.bio.dataconversion.GeneticProcessor"/>
+    </source>
+
+    <!-- chado featureprop attributes -->
+    <source name="chado-featureprop" type="legfed-chado-db" dump="true">
+      <property name="source.db.name" value="lis"/>
+      <property name="organisms" value="130453_V14167 130454_K30076"/>
+      <property name="dataSetTitle" value="LIS data"/>
+      <property name="dataSourceName" value="LIS chado database"/>
+      <property name="converter.class" value="org.intermine.bio.dataconversion.ChadoDBConverter"/>
+      <property name="processors" value="org.intermine.bio.dataconversion.FeaturePropProcessor"/>
+    </source>
+
+    <!-- chado gene families -->
+    <source name="chado-genefamilies" type="legfed-chado-db" dump="true">
+      <property name="source.db.name" value="lis"/>
+      <property name="organisms" value="130453_V14167 130454_K30076"/>
+      <property name="homologue.organisms" value="3847_Williams82 3920_IT97K-499-35 3847_Williams82 3880_A17 3885_G19833 3827_CDCFrontier 3827_ICC4958 157791_VC1973A 57577_MilvusB 3914_Gyeongwon 3821_ICPL87119 3871_Tanjil 34305_MG20"/>
+      <property name="dataSetTitle" value="LIS data"/>
+      <property name="dataSourceName" value="LIS chado database"/>
+      <property name="converter.class" value="org.intermine.bio.dataconversion.ChadoDBConverter"/>
+      <property name="processors" value="org.intermine.bio.dataconversion.GeneFamilyProcessor"/>
+    </source>
+
+    <!-- chado gene families and homology - based on phylotree - to pick up Arabidopsis -->
+    <source name="chado-homology" type="legfed-chado-db" dump="true">
+      <property name="source.db.name" value="lis"/>
+      <property name="organisms" value="130453_V14167 130454_K30076"/>
+      <property name="homologue.organisms" value="3702_Col0"/>
+      <property name="phytozome.version" value="phytozome_10_2"/>
+      <property name="dataSetTitle" value="LIS data"/>
+      <property name="dataSourceName" value="LIS chado database"/>
+      <property name="converter.class" value="org.intermine.bio.dataconversion.ChadoDBConverter"/>
+      <property name="processors" value="org.intermine.bio.dataconversion.HomologyProcessor"/>
+    </source>
+
+    <!-- chado GO annotation -->
+    <source name="chado-go" type="legfed-chado-db" dump="true">
+      <property name="source.db.name" value="lis"/>
+      <property name="organisms" value="130453_V14167 130454_K30076"/>
+      <property name="dataSetTitle" value="LIS data"/>
+      <property name="dataSourceName" value="LIS chado database"/>
+      <property name="converter.class" value="org.intermine.bio.dataconversion.ChadoDBConverter"/>
+      <property name="processors" value="org.intermine.bio.dataconversion.GOAnnotationProcessor"/>
+    </source>
+    
+    <!-- chado + reactome file -->
+    <source name="chado-reactome-file" type="legfed-chado-db" dump="true">
+      <property name="source.db.name" value="lis"/>
+      <property name="reactome.filename" location="/home/shokin/data/plant-reactome/reactome.txt"/>
+      <property name="organisms" value="130453_V14167 130454_K30076"/>
+      <property name="dataSetTitle" value="LIS data"/>
+      <property name="dataSourceName" value="LIS chado database"/>
+      <property name="converter.class" value="org.intermine.bio.dataconversion.ChadoDBConverter"/>
+      <property name="processors" value="org.intermine.bio.dataconversion.ReactomeProcessor"/>
+    </source>
+    
+    <!-- genetic marker genomic locations from GFF files -->
+    <source name="gff-geneticmarkers" type="legfed-geneticmarker-gff" dump="true">
+      <property name="src.data.dir" location="/home/shokin/data/peanut-markers"/>
+    </source>
+
+    <!-- duranensis to ipaensis synteny from GFF file -->
+    <source name="file-synteny" type="legfed-synteny-gff" dump="true">
+      <property name="src.data.dir" location="/home/shokin/data/peanut-synteny"/>
+    </source>
+      
+    <!-- peanutbase expression -->
+    <source name="peanut-expression" type="legfed-expression" dump="true">
+      <property name="src.data.dir" location="/home/shokin/data/peanut-expression"/>
+    </source>
+
     <!-- sequence ontology -->
     <source name="so" type="so">
       <property name="src.data.file" location="../../bio/sources/so/so.obo"/>
@@ -14,92 +104,27 @@
 
     <!-- gene ontology -->
     <source name="go" type="go">
-        <property name="src.data.file" location="/home/intermine/data/go-annotation/go.obo"/>
+        <property name="src.data.file" location="/home/shokin/data/go-annotation/go.obo"/>
     </source>
 
-    <!-- chado genomics - run first after so, go -->
-    <source name="chado-genomics" type="legfed-chado-db" dump="true">
-      <property name="source.db.name" value="peanutbase"/>
-      <property name="organisms" value="3398 3817 3818 130453 130454 3817 227691 217475 108213 108210 51121 170720 130453 3818 130454 224334 281005 281006 224333 281007 108211 281008 212810 281009 281010 224330 108212 167724 281011 224332 281012 281013 281014 108214 227692 281015 108215 224337 281016 281017 224339 281018 224335 215278 224336 224338 281020 224331 108217 281021 281022"/>
-      <property name="dataSetTitle" value="LIS Arachis data"/>
-      <property name="dataSourceName" value="LIS Peanutbase database"/>
-      <property name="converter.class" value="org.intermine.bio.dataconversion.ChadoDBConverter"/>
-      <property name="processors" value="org.intermine.bio.dataconversion.SequenceProcessor"/>
+    <!-- trait ontology -->
+    <source name="to" type="trait-ontology">
+      <property name="src.data.file" location="/home/shokin/data/plant-trait-ontology/to.obo"/>
+      <property name="ontology.prefix" value="TO"/>
     </source>
 
-    <!-- chado genetics -->
-    <source name="chado-genetics" type="legfed-chado-db" dump="true">
-      <property name="source.db.name" value="peanutbase"/>
-      <property name="organisms" value="3398 3817 3818 130453 130454 3817 227691 217475 108213 108210 51121 170720 130453 3818 130454 224334 281005 281006 224333 281007 108211 281008 212810 281009 281010 224330 108212 167724 281011 224332 281012 281013 281014 108214 227692 281015 108215 224337 281016 281017 224339 281018 224335 215278 224336 224338 281020 224331 108217 281021 281022"/>
-      <property name="phytozome.version" value="phytozome_10_2"/>
-      <property name="dataSetTitle" value="LIS Arachis data"/>
-      <property name="dataSourceName" value="LIS Peanutbase database"/>
-      <property name="converter.class" value="org.intermine.bio.dataconversion.ChadoDBConverter"/>
-      <property name="processors" value="org.intermine.bio.dataconversion.GeneticProcessor"/>
+    <!-- plant ontology -->
+    <source name="po" type="plant-ontology">
+      <property name="src.data.file" location="/home/shokin/data/plant-ontology/po.obo"/>
+      <property name="ontology.prefix" value="PO"/>
     </source>
 
-    <!-- chado featureprop attributes -->
-    <source name="chado-featureprop" type="legfed-chado-db" dump="true">
-      <property name="source.db.name" value="peanutbase"/>
-      <property name="organisms" value="3398 3817 3818 130453 130454 3817 227691 217475 108213 108210 51121 170720 130453 3818 130454 224334 281005 281006 224333 281007 108211 281008 212810 281009 281010 224330 108212 167724 281011 224332 281012 281013 281014 108214 227692 281015 108215 224337 281016 281017 224339 281018 224335 215278 224336 224338 281020 224331 108217 281021 281022"/>
-      <property name="dataSetTitle" value="LIS Arachis data"/>
-      <property name="dataSourceName" value="LIS Peanutbase database"/>
-      <property name="converter.class" value="org.intermine.bio.dataconversion.ChadoDBConverter"/>
-      <property name="processors" value="org.intermine.bio.dataconversion.FeaturePropProcessor"/>
-    </source>
-
-    <!-- chado homology attributes -->
-    <source name="chado-homology" type="legfed-chado-db" dump="true">
-      <property name="source.db.name" value="chado"/>
-      <property name="organisms" value="130453 130454"/>
-      <property name="homologue.organisms" value="3702 3847 3880 3885 130453 130454"/>
-      <property name="phytozome.version" value="phytozome_10_2"/>
-      <property name="dataSetTitle" value="LIS core chado"/>
-      <property name="dataSourceName" value="LIS core chado database"/>
-      <property name="converter.class" value="org.intermine.bio.dataconversion.ChadoDBConverter"/>
-      <property name="processors" value="org.intermine.bio.dataconversion.HomologyProcessor"/>
-    </source>
-
-    <!-- chado GO annotation -->
-    <source name="chado-go" type="legfed-chado-db" dump="true">
-      <property name="source.db.name" value="peanutbase"/>
-      <property name="organisms" value="3398 3817 3818 130453 130454 3817 227691 217475 108213 108210 51121 170720 130453 3818 130454 224334 281005 281006 224333 281007 108211 281008 212810 281009 281010 224330 108212 167724 281011 224332 281012 281013 281014 108214 227692 281015 108215 224337 281016 281017 224339 281018 224335 215278 224336 224338 281020 224331 108217 281021 281022"/>
-      <property name="dataSetTitle" value="LIS Arachis data"/>
-      <property name="dataSourceName" value="LIS peanutbase.chado"/>
-      <property name="converter.class" value="org.intermine.bio.dataconversion.ChadoDBConverter"/>
-      <property name="processors" value="org.intermine.bio.dataconversion.GOAnnotationProcessor"/>
-    </source>
-    
-    <!-- chado + reactome file -->
-    <source name="chado-reactome-file" type="legfed-chado-db" dump="true">
-      <property name="source.db.name" value="peanutbase"/>
-      <property name="reactome.filename" location="/home/intermine/data/plant-reactome/reactome.txt"/>
-      <property name="organisms" value="130453 130454"/>
-      <property name="dataSetTitle" value="LIS Peanutbase chado DB"/>
-      <property name="dataSourceName" value="LIS Peanutbase chado DB"/>
-      <property name="converter.class" value="org.intermine.bio.dataconversion.ChadoDBConverter"/>
-      <property name="processors" value="org.intermine.bio.dataconversion.ReactomeProcessor"/>
-    </source>
-    
-    <!-- genetic marker genomic locations from GFF files -->
-    <source name="gff-geneticmarkers" type="legfed-geneticmarker-gff" dump="true">
-      <property name="src.data.dir" location="/home/intermine/data/peanut-markers"/>
-    </source>
-
-    <!-- duranensis to ipaensis synteny from GFF file -->
-    <source name="file-synteny" type="legfed-synteny-gff" dump="true">
-      <property name="src.data.dir" location="/home/intermine/data/peanut-synteny"/>
-    </source>
-      
-    <!-- peanutbase expression -->
-    <source name="peanut-expression" type="legfed-expression" dump="true">
-      <property name="src.data.dir" location="/home/intermine/data/peanut-expression"/>
-    </source>
 
     <!-- update organism records -->
-    <source name="entrez-organism" type="entrez-organism">
-      <property name="src.data.file" location="build/organisms.xml"/>
-    </source>
+    <!-- BROKEN by Organism.variety - use SQL update script instead -->
+    <!-- <source name="entrez-organism" type="entrez-organism"> -->
+    <!--   <property name="src.data.file" location="build/organisms.xml"/> -->
+    <!-- </source> -->
 
   </sources>
 
