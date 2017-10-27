@@ -119,13 +119,6 @@
       <property name="ontology.prefix" value="PO"/>
     </source>
 
-
-    <!-- update organism records -->
-    <!-- BROKEN by Organism.variety - use SQL update script instead -->
-    <!-- <source name="entrez-organism" type="entrez-organism"> -->
-    <!--   <property name="src.data.file" location="build/organisms.xml"/> -->
-    <!-- </source> -->
-
   </sources>
 
   <post-processing>
