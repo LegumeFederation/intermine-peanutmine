@@ -7,8 +7,8 @@
 
   <sources>
 
-    <!-- LIS chado genomics - run first after so, go -->
-    <source name="chado-genomics" type="legfed-chado-db" dump="true">
+    <!-- LIS chado genomics -->
+    <source name="lis-genomics" type="legfed-chado-db" dump="true">
       <property name="source.db.name" value="lis"/>
       <property name="organisms" value="130453_V14167 130454_K30076"/>
       <property name="dataSetTitle" value="LIS data"/>
@@ -18,9 +18,9 @@
     </source>
 
     <!-- Peanutbase chado genetics -->
-    <source name="chado-genetics" type="legfed-chado-db" dump="true">
+    <source name="peanutbase-genetics" type="legfed-chado-db" dump="true">
       <property name="source.db.name" value="peanutbase"/>
-      <property name="organisms" value="130453_V14167 130454_K30076 3818_Various"/>
+      <property name="organisms" value="130453_V14167 130454_K30076"/>
       <property name="phytozome.version" value="phytozome_10_2"/>
       <property name="dataSetTitle" value="Peanutbase data"/>
       <property name="dataSourceName" value="Peanutbase chado database"/>
@@ -28,8 +28,8 @@
       <property name="processors" value="org.intermine.bio.dataconversion.GeneticProcessor"/>
     </source>
 
-    <!-- chado featureprop attributes -->
-    <source name="chado-featureprop" type="legfed-chado-db" dump="true">
+    <!-- LIS featureprop attributes -->
+    <source name="lis-featureprop" type="legfed-chado-db" dump="true">
       <property name="source.db.name" value="lis"/>
       <property name="organisms" value="130453_V14167 130454_K30076"/>
       <property name="dataSetTitle" value="LIS data"/>
@@ -38,8 +38,8 @@
       <property name="processors" value="org.intermine.bio.dataconversion.FeaturePropProcessor"/>
     </source>
 
-    <!-- chado gene families -->
-    <source name="chado-genefamilies" type="legfed-chado-db" dump="true">
+    <!-- LIS gene families -->
+    <source name="lis-genefamilies" type="legfed-chado-db" dump="true">
       <property name="source.db.name" value="lis"/>
       <property name="organisms" value="130453_V14167 130454_K30076"/>
       <property name="homologue.organisms" value="3847_Williams82 3920_IT97K-499-35 3847_Williams82 3880_A17 3885_G19833 3827_CDCFrontier 3827_ICC4958 157791_VC1973A 57577_MilvusB 3914_Gyeongwon 3821_ICPL87119 3871_Tanjil 34305_MG20"/>
@@ -49,8 +49,8 @@
       <property name="processors" value="org.intermine.bio.dataconversion.GeneFamilyProcessor"/>
     </source>
 
-    <!-- chado gene families and homology - based on phylotree - to pick up Arabidopsis -->
-    <source name="chado-homology" type="legfed-chado-db" dump="true">
+    <!-- LIS gene families and homology - based on phylotree - to pick up Arabidopsis -->
+    <source name="lis-homology" type="legfed-chado-db" dump="true">
       <property name="source.db.name" value="lis"/>
       <property name="organisms" value="130453_V14167 130454_K30076"/>
       <property name="homologue.organisms" value="3702_Col0"/>
@@ -61,8 +61,8 @@
       <property name="processors" value="org.intermine.bio.dataconversion.HomologyProcessor"/>
     </source>
 
-    <!-- chado GO annotation -->
-    <source name="chado-go" type="legfed-chado-db" dump="true">
+    <!-- LIS GO annotation -->
+    <source name="lis-go" type="legfed-chado-db" dump="true">
       <property name="source.db.name" value="lis"/>
       <property name="organisms" value="130453_V14167 130454_K30076"/>
       <property name="dataSetTitle" value="LIS data"/>
@@ -71,10 +71,10 @@
       <property name="processors" value="org.intermine.bio.dataconversion.GOAnnotationProcessor"/>
     </source>
     
-    <!-- chado + reactome file -->
-    <source name="chado-reactome-file" type="legfed-chado-db" dump="true">
+    <!-- LIS + reactome file -->
+    <source name="lis-reactome-file" type="legfed-chado-db" dump="true">
       <property name="source.db.name" value="lis"/>
-      <property name="reactome.filename" location="/home/shokin/data/plant-reactome/reactome.txt"/>
+      <property name="reactome.filename" location="/home/shokin/intermine-data/plant-reactome/reactome.txt"/>
       <property name="organisms" value="130453_V14167 130454_K30076"/>
       <property name="dataSetTitle" value="LIS data"/>
       <property name="dataSourceName" value="LIS chado database"/>
@@ -83,18 +83,18 @@
     </source>
     
     <!-- genetic marker genomic locations from GFF files -->
-    <source name="gff-geneticmarkers" type="legfed-geneticmarker-gff" dump="true">
-      <property name="src.data.dir" location="/home/shokin/data/peanut-markers"/>
+    <source name="peanut-geneticmarker-gff" type="legfed-geneticmarker-gff" dump="true">
+      <property name="src.data.dir" location="/home/shokin/intermine-data/peanut-markers"/>
     </source>
 
     <!-- duranensis to ipaensis synteny from GFF file -->
-    <source name="file-synteny" type="legfed-synteny-gff" dump="true">
-      <property name="src.data.dir" location="/home/shokin/data/peanut-synteny"/>
+    <source name="peanut-synteny-gff" type="legfed-synteny-gff" dump="true">
+      <property name="src.data.dir" location="/home/shokin/intermine-data/peanut-synteny"/>
     </source>
       
     <!-- peanutbase expression -->
     <source name="peanut-expression" type="legfed-expression" dump="true">
-      <property name="src.data.dir" location="/home/shokin/data/peanut-expression"/>
+      <property name="src.data.dir" location="/home/shokin/intermine-data/peanut-expression"/>
     </source>
 
     <!-- sequence ontology -->
@@ -104,18 +104,18 @@
 
     <!-- gene ontology -->
     <source name="go" type="go">
-        <property name="src.data.file" location="/home/shokin/data/go-annotation/go.obo"/>
+        <property name="src.data.file" location="/home/shokin/intermine-data/go-annotation/go.obo"/>
     </source>
 
     <!-- trait ontology -->
     <source name="to" type="trait-ontology">
-      <property name="src.data.file" location="/home/shokin/data/plant-trait-ontology/to.obo"/>
+      <property name="src.data.file" location="/home/shokin/intermine-data/plant-trait-ontology/to.obo"/>
       <property name="ontology.prefix" value="TO"/>
     </source>
 
     <!-- plant ontology -->
     <source name="po" type="plant-ontology">
-      <property name="src.data.file" location="/home/shokin/data/plant-ontology/po.obo"/>
+      <property name="src.data.file" location="/home/shokin/intermine-data/plant-ontology/po.obo"/>
       <property name="ontology.prefix" value="PO"/>
     </source>
 
