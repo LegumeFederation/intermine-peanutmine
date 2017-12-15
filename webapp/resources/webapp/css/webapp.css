@@ -1735,3 +1735,14 @@ div.bottom-footer ul.footer-links li { display:block; float:left; margin:0; }
 div.bottom-footer ul.footer-links li:not(:last-child) { margin-right:5px; }
 div.bottom-footer ul.footer-links li:not(:last-child):after { content:'|'; color:#E2E1E6; display:block; float:right; margin-left:5px; }
 div.bottom-footer ul.footer-links li a { text-decoration:none; text-transform:capitalize; }
+
+.begin-thirdBox {
+    margin-left:14px;
+    height:80px;
+    width:250px;
+    padding:5px;
+    text-align:center;
+    background-color:lightgray;
+    border:2px solid gray;
+    font-size:12px;
+}

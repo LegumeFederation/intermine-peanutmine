@@ -20,12 +20,12 @@
                 <p><c:out value="${WEB_PROPERTIES['begin.searchBox.description']}" escapeXml="false" /></p>
 
                 <form action="<c:url value="/keywordSearchResults.do" />" name="search" method="get">
-                    <div class="input"><input id="actionsInput" name="searchTerm" class="input" type="text" value="${WEB_PROPERTIES['begin.searchBox.example']}"></div>
-                    <div class="bottom">
-                        <center>
-                            <input id="mainSearchButton" name="searchSubmit" class="button dark" type="submit" value="search"/>
-                        </center>
-                    </div>
+                <div class="input"><input id="actionsInput" name="searchTerm" class="input" type="text" value="${WEB_PROPERTIES['begin.searchBox.example']}"></div>
+                <div class="bottom">
+                    <center>
+                        <input id="mainSearchButton" name="searchSubmit" class="button dark" type="submit" value="search"/>
+                    </center>
+                </div>
                 </form>
                 <div style="clear:both;"></div>
             </div>
@@ -37,48 +37,48 @@
                 <p><c:out value="${WEB_PROPERTIES['begin.listBox.description']}" escapeXml="false" /></p>
 
                 <form name="buildBagForm" method="post" action="<c:url value="/buildBag.do" />">
-                    <select name="type">
-                        <c:forEach var="bag" items="${preferredBags}">
-                            <option value="<c:out value="${bag}" />"><c:out value="${imf:formatPathStr(bag, INTERMINE_API, WEBCONFIG)}" /></option>
-                        </c:forEach>
-                    </select>
+                <select name="type">
+                    <c:forEach var="bag" items="${preferredBags}">
+                        <option value="<c:out value="${bag}" />"><c:out value="${imf:formatPathStr(bag, INTERMINE_API, WEBCONFIG)}" /></option>
+                    </c:forEach>
+                </select>
 
-                    <c:if test="${!empty WEB_PROPERTIES['begin.listUpload.values']}">
-                        <tr>
-                            <td align="right" class="label">
-                                <label>
-                                    <fmt:message key="bagBuild.extraConstraint">
-                                        <fmt:param value="${extraBagQueryClass}"/>
-                                    </fmt:message>
-                                </label>
-                            </td>
-                            <td>
-                                <select name="extraFieldValue">
-                                    <c:forEach var="value" items="${WEB_PROPERTIES['begin.listUpload.values']}">
-                                        <option value="<c:out value="${value}" />"><c:out value="${value}" /></option>
-                                    </c:forEach>
-                                </select>
-                            </td>
-                        </tr>
-                    </c:if>
+                <c:if test="${!empty WEB_PROPERTIES['begin.listUpload.values']}">
+                    <tr>
+                        <td align="right" class="label">
+                            <label>
+                                <fmt:message key="bagBuild.extraConstraint">
+                                    <fmt:param value="${extraBagQueryClass}"/>
+                                </fmt:message>
+                            </label>
+                        </td>
+                        <td>
+                            <select name="extraFieldValue">
+                                <c:forEach var="value" items="${WEB_PROPERTIES['begin.listUpload.values']}">
+                                    <option value="<c:out value="${value}" />"><c:out value="${value}" /></option>
+                                </c:forEach>
+                            </select>
+                        </td>
+                    </tr>
+                </c:if>
 
-                    <div class="textarea">
-                        <c:choose>
-                            <c:when test="${fn:startsWith(WEB_PROPERTIES['bag.example.identifiers'], 'e.g') == true}">
-                                <textarea id="listInput" name="text"><c:out value="${WEB_PROPERTIES['bag.example.identifiers']}" /></textarea>
-                            </c:when>
-                            <c:otherwise>
-                                <textarea id="listInput" name="text">e.g. <c:out value="${WEB_PROPERTIES['bag.example.identifiers']}" /></textarea>
-                            </c:otherwise>
-                        </c:choose>
-                    </div>
-                    <div class="bottom">
-                        <center>
-                            <a class="advanced" href="bag.do?subtab=upload">advanced</a>
-                            <br />
-                            <input class="button light" type="submit" value="analyse"/>
-                        </center>
-                    </div>
+                <div class="textarea">
+                    <c:choose>
+                        <c:when test="${fn:startsWith(WEB_PROPERTIES['bag.example.identifiers'], 'e.g') == true}">
+                            <textarea id="listInput" name="text"><c:out value="${WEB_PROPERTIES['bag.example.identifiers']}" /></textarea>
+                        </c:when>
+                        <c:otherwise>
+                            <textarea id="listInput" name="text">e.g. <c:out value="${WEB_PROPERTIES['bag.example.identifiers']}" /></textarea>
+                        </c:otherwise>
+                    </c:choose>
+                </div>
+                <div class="bottom">
+                    <center>
+                        <a class="advanced" href="bag.do?subtab=upload">advanced</a>
+                        <br />
+                        <input class="button light" type="submit" value="analyse"/>
+                    </center>
+                </div>
                 </form>
             </div>
         </div>
@@ -104,17 +104,17 @@
                     <div class="bottom">
                         <c:choose>
                             <c:when test="${!isNewUser && !empty (WEB_PROPERTIES['begin.thirdBox.visitedLink'])}">
-                                <div style="margin-left:14px;height:80px;width:250px;text-align:center;background-color:lightgray;border:2px solid gray">
+                                <div class="begin-thirdBox">
                                     <a href="<c:out value="${WEB_PROPERTIES['begin.thirdBox.visitedLink']}" />" >
-                                        <c:out value="${WEB_PROPERTIES['begin.thirdBox.visitedLinkTitle']}" />
-                                    </a>
+                                    <c:out value="${WEB_PROPERTIES['begin.thirdBox.visitedLinkTitle']}" />
+                        </a>
                                 </div>
                             </c:when>
                             <c:otherwise>
-                                <div style="margin-left:14px;height:80px;width:250px;text-align:center;background-color:lightgray;border:2px solid gray">
+                                <div class="begin-thirdBox">
                                     <a href="<c:out value="${WEB_PROPERTIES['begin.thirdBox.link']}" />" >
-                                        <c:out value="${WEB_PROPERTIES['begin.thirdBox.linkTitle']}" />
-                                    </a>
+                                    <c:out value="${WEB_PROPERTIES['begin.thirdBox.linkTitle']}" />
+                        </a>
                                 </div>
                             </c:otherwise>
                         </c:choose>

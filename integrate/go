@@ -3,17 +3,21 @@ echo "********** peanutmine/integrate **********"
 ant clean
 
 # ontologies
-#pg_restore -d peanutmine /home/analysis/shokin/dumps/peanutmine.ontologies.dat
 #ant -v -Dsource=go,so,to,po
-#pg_dump -Fc peanutmine > /home/analysis/shokin/dumps/peanutmine.ontologies.dat
+
+#pg_restore -d peanutmine /home/shokin/dumps/peanutmine.ontologies.dat
 
 # chado
-#pg_restore -d peanutmine /home/analysis/shokin/dumps/peanutmine.chado.dat
-ant -v -Dsource=lis-genomics,peanutbase-genetics,lis-featureprop,lis-genefamilies,lis-homology,lis-go,lis-reactome-file
-#pg_dump -Fc peanutmine > /home/analysis/shokin/dumps/peanutmine.chado.dat
+#ant -v -Dsource=lis-genomics,lis-featureprop,lis-reactome-file,lis-genefamilies,lis-homology
+#ant -v -Dsource=peanutbase-genetics,peanutbase-featureprop
 
-# update organisms and identifiers
+#pg_restore -d peanutmine /home/shokin/dumps/peanutmine.chado.dat
 
+# ALL of the chado data loading must be DONE and BACKED UP before continuing, because identifiers are changed by SQL below
+psql peanutmine -f ../dbmodel/build/model/add-update-triggers.sql
+psql peanutmine -f ../sql/update-organisms.sql
+psql peanutmine -f ../sql/update-identifiers.sql
+psql peanutmine -f ../dbmodel/build/model/remove-update-triggers.sql
 
 # non-chado
-#ant -v -Dsource=gff-geneticmarkers,file-synteny,peanut-expression
+ant -v -Dsource=peanut-geneticmarker-gff,peanut-synteny-gff,peanut-expression
