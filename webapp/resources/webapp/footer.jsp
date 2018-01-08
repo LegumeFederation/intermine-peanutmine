@@ -43,7 +43,7 @@
         </c:forEach>
 
         <!-- LegFed and relevant mines -->
-        <li><a href="http://intermine.legumefederation.org/legumemine/begin.do" target="_blank">LegFed LegumeMine (various legumes)</a></li>
+        <li><a href="http://mines.legumeinfo.org/legumemine/begin.do" target="_blank">LegFed LegumeMine (various legumes)</a></li>
         <li><a href="http://mines.legumeinfo.org/beanmine/begin.do" target="_blank">LIS BeanMine (string bean)</a></li>
         <li><a href="http://mines.legumeinfo.org/soymine/begin.do" target="_blank">LIS Soymine (soybean)</a></li>
 	<li><a href="http://mines.legumeinfo.org/peanutmine/begin.do" target="_blank">LIS PeanutMine (several peanut species)</a></li>
