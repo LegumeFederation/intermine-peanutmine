@@ -5,18 +5,19 @@ ant clean
 # ontologies
 #ant -v -Dsource=go,so,to,po
 
-#pg_restore -d peanutmine /home/shokin/dumps/peanutmine.ontologies.dat
-
 # chado
-#ant -v -Dsource=lis-genomics,lis-featureprop,lis-reactome-file,lis-genefamilies,lis-homology
+#ant -v -Dsource=lis-genomics,lis-featureprop,lis-reactome-file,lis-genefamilies
+# the homology loader is doing Phytosome, not LIS gene families, so commented out
+#ant -v -Dsource=lis-homology
 #ant -v -Dsource=peanutbase-genetics,peanutbase-featureprop
 
-#pg_restore -d peanutmine /home/shokin/dumps/peanutmine.chado.dat
+pg_restore -d peanutmine /home/shokin/dumps/peanutmine.chado.dat
 
 # ALL of the chado data loading must be DONE and BACKED UP before continuing, because identifiers are changed by SQL below
 psql peanutmine -f ../dbmodel/build/model/add-update-triggers.sql
-psql peanutmine -f ../sql/update-organisms.sql
 psql peanutmine -f ../sql/update-identifiers.sql
+psql peanutmine -f ../sql/update-organism-descriptions.sql
+psql peanutmine -f ../sql/update-organism-genus-species.sql
 psql peanutmine -f ../dbmodel/build/model/remove-update-triggers.sql
 
 # non-chado
