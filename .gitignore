@@ -1,8 +1,6 @@
 *~
 *.log
-go-*
-*/build/
-*/dist/
-sql
-webapp/resources/webapp/model
-webapp/src
+.gradle
+build
+webapp/src/main/java
+webapp/src/main/webapp/model

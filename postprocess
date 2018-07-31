@@ -1,0 +1,37 @@
+#!/bin/sh
+# post-processes
+
+# ./gradlew postprocess -Pprocess="do-sources"
+
+## add features
+#./gradlew postprocess -Pprocess=legfed-create-gene-flanking-regions
+#./gradlew postprocess -Pprocess=legfed-create-supercontig-flanking-regions
+#./gradlew postprocess -Pprocess=legfed-create-intron-features
+#./gradlew postprocess -Pprocess=create-intergenic-region-features
+
+## legfed references and collections
+#./gradlew postprocess -Pprocess=legfed-create-go-annotations
+#./gradlew postprocess -Pprocess=legfed-create-ontology-parent-annotations
+#./gradlew postprocess -Pprocess=legfed-create-proteindomain-references
+#./gradlew postprocess -Pprocess=legfed-create-protein-gene-references
+#./gradlew postprocess -Pprocess=legfed-create-qtl-linkagegroup-references
+#./gradlew postprocess -Pprocess=legfed-populate-gene-spanning-qtls
+#./gradlew postprocess -Pprocess=legfed-populate-linkagegroup-lengths
+#./gradlew postprocess -Pprocess=legfed-populate-interpro-data
+#./gradlew postprocess -Pprocess=legfed-populate-publications
+    
+## core references and collections
+#./gradlew postprocess -Pprocess=populate-child-features
+#./gradlew postprocess -Pprocess=create-references 
+#./gradlew postprocess -Pprocess=create-chromosome-locations-and-lengths
+#./gradlew postprocess -Pprocess=transfer-sequences
+
+## views and indexes
+#./gradlew postprocess -Pprocess=create-location-overlap-index
+#./gradlew postprocess -Pprocess=create-overlap-view 
+
+## rerun these after every data change
+./gradlew postprocess -Pprocess=create-attribute-indexes
+#./gradlew postprocess -Pprocess=summarise-objectstore
+#./gradlew postprocess -Pprocess=create-autocomplete-index
+#./gradlew postprocess -Pprocess=create-search-index

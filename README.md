@@ -1,2 +1,2 @@
-# soymine
-An InterMine for soybean
+# PeanutMine
+An InterMine for peanut
