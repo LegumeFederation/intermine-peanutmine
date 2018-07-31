@@ -1,115 +1,125 @@
 <project type="bio">
   <property name="target.model" value="genomic"/>
-  <property name="source.location" location="../bio/sources/"/>
   <property name="common.os.prefix" value="common"/>
-  <property name="intermine.properties.file" value="peanutmine.properties"/>
-  <property name="default.intermine.properties.file" location="../default.intermine.integrate.properties"/>
+  <property name="intermine.properties.file" value="soymine.properties"/>
 
   <sources>
 
-    <!-- LIS/PEANUTBASE CHADO -->
-
-    <!-- LIS chado genomics - all the LIS species with genes -->
+    <!-- chado genomics -->
     <source name="lis-genomics" type="legfed-chado-db" dump="true">
       <property name="source.db.name" value="lis-chado"/>
-      <property name="organisms" value="3818_Tifrunner 130453_V14167 130454_K30076"/>
-      <property name="dataSetTitle" value="LIS chado genomic data"/>
-      <property name="dataSourceName" value="LIS chado"/>
-      <property name="converter.class" value="org.intermine.bio.dataconversion.ChadoDBConverter"/>
+      <property name="organisms" value="3847_Williams82"/>
+      <property name="dataSetTitle" value="LIS Glycine max (3847_Williams82) data"/>
+      <property name="dataSourceName" value="LIS chado database"/>
       <property name="processors" value="org.intermine.bio.dataconversion.SequenceProcessor"/>
     </source>
 
-    <!-- Peanutbase chado genetics -->
-    <source name="peanutbase-genetics" type="legfed-chado-db" dump="true">
-      <property name="source.db.name" value="peanutbase-chado"/>
-      <property name="organisms" value="3818_Tifrunner 130453_V14167 130454_K30076"/>
-      <property name="dataSetTitle" value="Peanutbase chado genetic data"/>
-      <property name="dataSourceName" value="Peanutbase chado"/>
-      <property name="converter.class" value="org.intermine.bio.dataconversion.ChadoDBConverter"/>
+    <!-- chado genetics -->
+    <source name="lis-genetics" type="legfed-chado-db" dump="true">
+      <property name="source.db.name" value="lis-chado"/>
+      <property name="organisms" value="3847_Williams82"/>
+      <property name="phytozome.version" value="phytozome_10_2"/>
+      <property name="dataSetTitle" value="LIS Glycine max (3847_Williams82) data"/>
+      <property name="dataSourceName" value="LIS chado database"/>
       <property name="processors" value="org.intermine.bio.dataconversion.GeneticProcessor"/>
     </source>
 
-    <!-- LIS chado featureprop -->
+    <!-- chado GO annotation -->
+    <source name="lis-go-annotation" type="legfed-chado-db" dump="true">
+      <property name="source.db.name" value="lis-chado"/>
+      <property name="organisms" value="3847_Williams82"/>
+      <property name="dataSetTitle" value="LIS Glycine Max (3847_Williams82) data"/>
+      <property name="dataSourceName" value="LIS chado database"/>
+      <property name="processors" value="org.intermine.bio.dataconversion.GOAnnotationProcessor"/>
+    </source>
+
+    <!-- chado featureprop attributes -->
     <source name="lis-featureprop" type="legfed-chado-db" dump="true">
       <property name="source.db.name" value="lis-chado"/>
-      <property name="organisms" value="3818_Tifrunner 130453_V14167 130454_K30076"/>
-      <property name="dataSetTitle" value="LIS chado featureprop data"/>
-      <property name="dataSourceName" value="LIS chado"/>
-      <property name="converter.class" value="org.intermine.bio.dataconversion.ChadoDBConverter"/>
+      <property name="organisms" value="3847_Williams82"/>
+      <property name="dataSetTitle" value="LIS Glycine max (3847_Williams82) data"/>
+      <property name="dataSourceName" value="LIS chado database"/>
       <property name="processors" value="org.intermine.bio.dataconversion.FeaturePropProcessor"/>
     </source>
 
-    <!-- Peanutbase chado featureprop -->
-    <source name="peanutbase-featureprop" type="legfed-chado-db" dump="true">
-      <property name="source.db.name" value="peanutbase-chado"/>
-      <property name="organisms" value="3818_Tifrunner 130453_V14167 130454_K30076"/>
-      <property name="dataSetTitle" value="Peanutbase chado featureprop data"/>
-      <property name="dataSourceName" value="Peanutbase chado"/>
-      <property name="converter.class" value="org.intermine.bio.dataconversion.ChadoDBConverter"/>
-      <property name="processors" value="org.intermine.bio.dataconversion.FeaturePropProcessor"/>
-    </source>
-
-    <!-- LIS chado gene families -->
+    <!-- chado gene families and resulting homology - based on featureprop -->
     <source name="lis-genefamilies" type="legfed-chado-db" dump="true">
       <property name="source.db.name" value="lis-chado"/>
-      <property name="organisms" value="3818_Tifrunner 130453_V14167 130454_K30076"/>
-      <property name="homologue.organisms" value="3818_Tifrunner 3821_ICPL87119 3827_CDCFrontier 3827_ICC4958 3847_Williams82 3871_Tanjil 3880_A17 3885_G19833 3914_Gyeongwon 3920_IT97K-499-35 34305_MG20 57577_MilvusB 130453_V14167 130454_K30076 157791_VC1973A"/>
-      <property name="dataSetTitle" value="LIS chado gene family data"/>
-      <property name="dataSourceName" value="LIS chado"/>
+      <property name="organisms" value="3847_Williams82"/>
+      <property name="homologue.organisms" value="3920_IT97K-499-35 3847_Williams82 3880_A17 3885_G19833 130453_V14167 130454_K30076 3827_CDCFrontier 3827_ICC4958 157791_VC1973A 57577_MilvusB 3914_Gyeongwon 3821_ICPL87119 3871_Tanjil 34305_MG20"/>
+      <property name="dataSetTitle" value="LIS chado data"/>
+      <property name="dataSourceName" value="LIS chado database"/>
       <property name="converter.class" value="org.intermine.bio.dataconversion.ChadoDBConverter"/>
       <property name="processors" value="org.intermine.bio.dataconversion.GeneFamilyProcessor"/>
     </source>
 
-    <!-- LIS chado homology - based on phylotree - to pick up Arabidopsis homologues -->
-    <source name="lis-homology" type="legfed-chado-db" dump="true">
-      <property name="phytozome.version" value="phytozome_10_2"/>
-      <property name="source.db.name" value="lis-chado"/>
-      <property name="organisms" value="3818_Tifrunner 130453_V14167 130454_K30076"/>
-      <property name="homologue.organisms" value="3702_Col0"/>
-      <property name="dataSetTitle" value="LIS chado phylotree data"/>
-      <property name="dataSourceName" value="LIS chado"/>
-      <property name="converter.class" value="org.intermine.bio.dataconversion.ChadoDBConverter"/>
-      <property name="processors" value="org.intermine.bio.dataconversion.HomologyProcessor"/>
+    <!-- synteny from GFF files -->
+    <source name="soybean-synteny" type="legfed-synteny-gff" dump="true">
+      <property name="src.data.dir" location="/home/shokin/legfed-intermine-data/soybean-synteny"/>
     </source>
-    
-    <!-- LIS chado + reactome file -->
+
+    <!-- chado + reactome file -->
     <source name="lis-reactome-file" type="legfed-chado-db" dump="true">
       <property name="source.db.name" value="lis-chado"/>
-      <property name="reactome.filename" location="/home/shokin/legfed-intermine-data/plant-reactome/reactome.txt"/>
-      <property name="organisms" value="3818_Tifrunner 130453_V14167 130454_K30076"/>
+      <property name="reactome.filename" value="/home/shokin/legfed-intermine-data/plant-reactome/gene_ids_by_pathway_and_species.tab"/>
+      <property name="organisms" value="3847_Williams82"/>
       <property name="dataSetTitle" value="Plant Reactome data"/>
-      <property name="dataSourceName" value="Plant Reactome file"/>
+      <property name="dataSourceName" value="LIS chado database"/>
       <property name="converter.class" value="org.intermine.bio.dataconversion.ChadoDBConverter"/>
       <property name="processors" value="org.intermine.bio.dataconversion.ReactomeProcessor"/>
     </source>
 
-    <!-- PEANUT NON-CHADO -->
-
-    <!-- genetic marker genomic locations from GFF files -->
-    <source name="peanut-geneticmarker-gff" type="legfed-geneticmarker-gff" dump="true">
-      <property name="src.data.dir" location="/home/shokin/legfed-intermine-data/peanut-markers"/>
+    <!-- soybean expression -->
+    <source name="soybean-expression" type="legfed-expression" dump="true">
+      <property name="src.data.dir" location="/home/shokin/legfed-intermine-data/soybean-expression"/>
     </source>
 
-    <!-- duranensis to ipaensis synteny from GFF file -->
-    <source name="peanut-synteny-gff" type="legfed-synteny-gff" dump="true">
-      <property name="src.data.dir" location="/home/shokin/legfed-intermine-data/peanut-synteny"/>
+    <!-- QTL data from tab-delimited file -->
+    <source name="soybase-qtls" type="legfed-qtl-file" dump="true">
+      <property name="src.data.dir" location="/home/shokin/legfed-intermine-data/soybase-qtl"/>
     </source>
-    
-    <!-- peanutbase expression -->
-    <source name="peanut-expression" type="legfed-expression" dump="true">
-      <property name="src.data.dir" location="/home/shokin/legfed-intermine-data/peanut-expression"/>
+
+    <!-- QTL-ontology relations from tab-delimited file -->
+    <source name="soybase-qtl-ontology" type="legfed-qtl-ontology-file" dump="true">
+      <property name="src.data.dir" location="/home/shokin/legfed-intermine-data/soybase-qtl-ontology"/>
     </source>
+
+    <!-- genetic marker genomic locations and types from tab-delimited file -->
+    <source name="soybase-markers-chromosomes" type="legfed-marker-chromosome-file" dump="true">
+      <property name="src.data.dir" location="/home/shokin/legfed-intermine-data/soybase-markers-chromosomes"/>
+    </source>
+
+    <!-- linkage groups and genetic maps from tab-delimited file -->
+    <source name="soybase-linkagegroups" type="legfed-linkagegroup-file" dump="true">
+      <property name="src.data.dir" location="/home/shokin/legfed-intermine-data/soybase-linkagegroups"/>
+    </source>
+
+    <!-- genetic marker genetic locations on linkage groups from tab-delimited file -->
+    <source name="soybase-markers-linkagegroups" type="legfed-marker-linkagegroup-file" dump="true">
+      <property name="src.data.dir" location="/home/shokin/legfed-intermine-data/soybase-markers-linkagegroups"/>
+    </source>
+
+    <!-- genetic marker associations with QTLs from tab-delimited file -->
+    <source name="soybase-markers-qtls" type="legfed-marker-qtl-file" dump="true">
+      <property name="src.data.dir" location="/home/shokin/legfed-intermine-data/soybase-markers-qtls"/>
+    </source>
+
+    <!-- GWAS marker-QTL associations from tab-delimited file -->
+    <source name="soybase-gwas" type="legfed-gwas-file" dump="true">
+      <property name="src.data.dir" location="/home/shokin/legfed-intermine-data/soybase-gwas"/>
+    </source>
+
 
     <!-- ONTOLOGIES -->
+    
+    <!-- gene ontology -->
+    <source name="go" type="go">
+      <property name="src.data.file" location="/home/shokin/legfed-intermine-data/gene-ontology/go-basic.obo"/>
+    </source>
 
     <!-- sequence ontology -->
     <source name="so" type="so">
-      <property name="src.data.file" location="../../bio/sources/so/so.obo"/>
-    </source>
-
-    <!-- gene ontology -->
-    <source name="go" type="go">
-        <property name="src.data.file" location="/home/shokin/legfed-intermine-data/gene-ontology/go-basic.obo"/>
+      <property name="src.data.file" location="/home/shokin/SO-Ontologies/so-simple.obo"/>
     </source>
 
     <!-- trait ontology -->
@@ -124,6 +134,7 @@
       <property name="ontology.prefix" value="PO"/>
     </source>
 
+
   </sources>
 
   <post-processing>
@@ -131,24 +142,26 @@
     <!-- source-specific post-processing -->
     <post-process name="do-sources" dump="true"/>
 
-    <!-- legfed -->
-    <post-process name="create-go-annotations" dump="true"/>
-    <post-process name="create-protein-gene-references" dump="true"/>
-    <post-process name="create-protein-domain-references" dump="true"/>
-    <post-process name="create-ontology-parent-annotations" dump="true"/>
-    <post-process name="populate-publications" dump="true"/>
-    <post-process name="populate-linkagegroup-lengths" dump="true"/>
-    <post-process name="populate-qtl-linkagegroups" dump="true"/>
-    <post-process name="populate-gene-spanning-qtls" dump="true"/>
-    <post-process name="populate-interpro-data" dump="true"/>
-    
     <!-- add features -->
-    <post-process name="create-intron-features"/>
+    <post-process name="legfed-create-gene-flanking-regions"/>
+    <post-process name="legfed-create-supercontig-flanking-regions"/>
+    <post-process name="legfed-create-intron-features"/>
     <post-process name="create-intergenic-region-features"/>
-    <post-process name="create-gene-flanking-features"/> 
-   
-    <!-- create various references and collections -->
-    <post-process name="populate-located-features"/>
+
+    <!-- legfed references and collections -->
+    <post-process name="legfed-create-go-annotations"/>
+    <post-process name="legfed-create-ontology-parent-annotations"/>
+    <post-process name="legfed-create-proteindomain-references"/>
+    <post-process name="legfed-create-protein-gene-references"/>
+    <post-process name="legfed-create-qtl-linkagegroup-references"/>
+
+    <post-process name="legfed-populate-gene-spanning-qtls"/>
+    <post-process name="legfed-populate-interpro-data"/>
+    <post-process name="legfed-populate-linkagegroup-lengths"/>
+
+    <post-process name="legfed-populate-publications"/>
+    
+    <!-- core references and collections -->
     <post-process name="populate-child-features"/>
     <post-process name="create-references" />
     <post-process name="create-chromosome-locations-and-lengths"/>
