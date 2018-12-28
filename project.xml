@@ -8,7 +8,8 @@
     <!-- LIS chado genomics - all the LIS species with genes -->
     <source name="lis-genomics" type="legfed-chado-db" dump="true">
       <property name="source.db.name" value="lis-chado"/>
-      <property name="organisms" value="3818_Tifrunner 130453_V14167 130454_K30076"/>
+      <property name="organisms" value="3818 130453 130454"/>
+      <property name="strains" value="Tifrunner V14167 K30076"/>
       <property name="dataSetTitle" value="LIS chado genomic data"/>
       <property name="dataSourceName" value="LIS chado"/>
       <property name="converter.class" value="org.intermine.bio.dataconversion.ChadoDBConverter"/>
@@ -18,7 +19,8 @@
     <!-- Peanutbase chado genetics -->
     <source name="peanutbase-genetics" type="legfed-chado-db" dump="true">
       <property name="source.db.name" value="peanutbase-chado"/>
-      <property name="organisms" value="3818_Tifrunner 130453_V14167 130454_K30076"/>
+      <property name="organisms" value="3818 130453 130454"/>
+      <property name="strains" value="Tifrunner V14167 K30076"/>
       <property name="dataSetTitle" value="Peanutbase chado genetic data"/>
       <property name="dataSourceName" value="Peanutbase chado"/>
       <property name="converter.class" value="org.intermine.bio.dataconversion.ChadoDBConverter"/>
@@ -28,7 +30,8 @@
     <!-- LIS chado featureprop -->
     <source name="lis-featureprop" type="legfed-chado-db" dump="true">
       <property name="source.db.name" value="lis-chado"/>
-      <property name="organisms" value="3818_Tifrunner 130453_V14167 130454_K30076"/>
+      <property name="organisms" value="3818 130453 130454"/>
+      <property name="strains" value="Tifrunner V14167 K30076"/>
       <property name="dataSetTitle" value="LIS chado featureprop data"/>
       <property name="dataSourceName" value="LIS chado"/>
       <property name="converter.class" value="org.intermine.bio.dataconversion.ChadoDBConverter"/>
@@ -38,7 +41,8 @@
     <!-- Peanutbase chado featureprop -->
     <source name="peanutbase-featureprop" type="legfed-chado-db" dump="true">
       <property name="source.db.name" value="peanutbase-chado"/>
-      <property name="organisms" value="3818_Tifrunner 130453_V14167 130454_K30076"/>
+      <property name="organisms" value="3818 130453 130454"/>
+      <property name="strains" value="Tifrunner V14167 K30076"/>
       <property name="dataSetTitle" value="Peanutbase chado featureprop data"/>
       <property name="dataSourceName" value="Peanutbase chado"/>
       <property name="converter.class" value="org.intermine.bio.dataconversion.ChadoDBConverter"/>
@@ -48,8 +52,10 @@
     <!-- LIS chado gene families -->
     <source name="lis-genefamilies" type="legfed-chado-db" dump="true">
       <property name="source.db.name" value="lis-chado"/>
-      <property name="organisms" value="3818_Tifrunner 130453_V14167 130454_K30076"/>
-      <property name="homologue.organisms" value="3818_Tifrunner 3821_ICPL87119 3827_CDCFrontier 3827_ICC4958 3847_Williams82 3871_Tanjil 3880_A17 3885_G19833 3914_Gyeongwon 3920_IT97K-499-35 34305_MG20 57577_MilvusB 130453_V14167 130454_K30076 157791_VC1973A"/>
+      <property name="organisms" value="3818 130453 130454"/>
+      <property name="strains" value="Tifrunner V14167 K30076"/>
+      <property name="homologue.organisms" value="3818 3821 3827 3827 3847 3871 3880 3885 3914 3920 34305 57577 130453 130454 157791"/>
+      <property name="homologue.strains" value="Tifrunner ICPL87119 CDCFrontier ICC4958 Williams82 Tanjil A17 G19833 Gyeongwon IT97K-499-35 MG20 MilvusB V14167 K30076 VC1973A"/>
       <property name="dataSetTitle" value="LIS chado gene family data"/>
       <property name="dataSourceName" value="LIS chado"/>
       <property name="converter.class" value="org.intermine.bio.dataconversion.ChadoDBConverter"/>
@@ -60,7 +66,8 @@
     <source name="lis-reactome-file" type="legfed-chado-db" dump="true">
       <property name="source.db.name" value="lis-chado"/>
       <property name="reactome.filename" value="/home/shokin/legfed-intermine-data/plant-reactome/gene_ids_by_pathway_and_species.tab"/>
-      <property name="organisms" value="3818_Tifrunner 130453_V14167 130454_K30076"/>
+      <property name="organisms" value="3818 130453 130454"/>
+      <property name="strains" value="Tifrunner V14167 K30076"/>
       <property name="dataSetTitle" value="Plant Reactome data"/>
       <property name="dataSourceName" value="LIS chado database"/>
       <property name="converter.class" value="org.intermine.bio.dataconversion.ChadoDBConverter"/>
