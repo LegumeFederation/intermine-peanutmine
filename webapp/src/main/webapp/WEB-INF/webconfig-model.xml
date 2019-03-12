@@ -68,10 +68,12 @@
   <!-- have to have a Gene entry for the list analysis heat map -->
   <class className="org.intermine.model.bio.Gene">
     <fields>
-      <fieldconfig fieldExpr="primaryIdentifier" label="DB identifier" />
       <fieldconfig fieldExpr="organism.name" label="Organism" />
+      <fieldconfig fieldExpr="strain.primaryIdentifier" label="Strain" />
+      <fieldconfig fieldExpr="primaryIdentifier" label="DB identifier" />
+      <fieldconfig fieldExpr="secondaryIdentifier" label="Alt identifier"/>
       <fieldconfig fieldExpr="length" displayer="/model/sequenceShortDisplayerWithField.jsp" showInInlineCollection="true" showInSummary="true" />
-      <fieldconfig fieldExpr="description"/>
+      <fieldconfig fieldExpr="description" doNotTruncate="true" />
     </fields>
     <bagdisplayers>
       <displayer src="heatMap.tile" showOnLeft="true" />
@@ -181,6 +183,18 @@
     </fields>
   </class>
 
+  <class className="org.intermine.model.bio.Strain">
+    <headerconfig>
+      <titles>
+        <title mainTitles="primaryIdentifier"/>
+      </titles>
+    </headerconfig>
+    <fields>
+      <fieldconfig fieldExpr="primaryIdentifier" label="Name" />
+      <fieldconfig fieldExpr="organism.name" label="Organism" />
+      <fieldconfig fieldExpr="description" doNotTruncate="true" />
+    </fields>
+  </class>
 
   <class className="org.intermine.model.bio.Publication">
     <headerconfig>
@@ -302,7 +316,9 @@
       </titles>
     </headerconfig>
     <fields>
-      <fieldconfig fieldExpr="primaryIdentifier" label="DB identifier"/>
+      <fieldconfig fieldExpr="primaryIdentifier" label="Name"/>
+      <fieldconfig fieldExpr="phenotype.primaryIdentifier" label="Phenotype"/>
+      <fieldconfig fieldExpr="description" doNotTruncate="true" />
     </fields>
   </class>
 
@@ -369,6 +385,19 @@
     </headerconfig>
     <fields>
       <fieldconfig fieldExpr="primaryIdentifier" label="DB identifier"/>
+    </fields>
+  </class>
+
+  <class className="org.intermine.model.bio.Phenotype">
+    <headerconfig>
+      <titles>
+        <title mainTitles="primaryIdentifier" numberOfMainTitlesToShow="1"/>
+      </titles>
+    </headerconfig>
+    <fields>
+      <fieldconfig fieldExpr="primaryIdentifier" label="Name"/>
+      <fieldconfig fieldExpr="description" label="Description" doNoTruncate="true"/>
+      <fieldconfig fieldExpr="unit"/>
     </fields>
   </class>
 
@@ -460,19 +489,19 @@
                                       ontologyAnnotations.ontologyTerm.name"
                                externalLink="http://amigo.geneontology.org/cgi-bin/amigo/term_details?term=" />
 
-    <enrichmentwidgetdisplayer id="to_enrichment_for_qtl"
-                               title="Plant Trait Ontology Enrichment"
-                               description="TO terms enriched for items in this list."
-                               label="TO Term"
-                               startClass="QTL"
-                               typeClass="QTL"
-                               startClassDisplay="primaryIdentifier"
-                               enrich="ontologyAnnotations.ontologyTerm.name"
-                               enrichIdentifier="ontologyAnnotations.ontologyTerm.identifier"
-                               views="secondaryIdentifier,symbol,primaryIdentifier,organism.name,
-                                      ontologyAnnotations.ontologyTerm.identifier,
-                                      ontologyAnnotations.ontologyTerm.name"
-                               externalLink="http://archive.gramene.org/db/ontology/search?id=" />
+    <!-- <enrichmentwidgetdisplayer id="to_enrichment_for_qtl" -->
+    <!--                            title="Plant Trait Ontology Enrichment" -->
+    <!--                            description="TO terms enriched for items in this list." -->
+    <!--                            label="TO Term" -->
+    <!--                            startClass="QTL" -->
+    <!--                            typeClass="QTL" -->
+    <!--                            startClassDisplay="primaryIdentifier" -->
+    <!--                            enrich="ontologyAnnotations.ontologyTerm.name" -->
+    <!--                            enrichIdentifier="ontologyAnnotations.ontologyTerm.identifier" -->
+    <!--                            views="secondaryIdentifier,symbol,primaryIdentifier,organism.name, -->
+    <!--                                   ontologyAnnotations.ontologyTerm.identifier, -->
+    <!--                                   ontologyAnnotations.ontologyTerm.name" -->
+    <!--                            externalLink="http://archive.gramene.org/db/ontology/search?id=" /> -->
     
   </widgets>
   

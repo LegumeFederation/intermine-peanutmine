@@ -131,7 +131,6 @@
     <!-- legfed references and collections -->
     <post-process name="legfed-create-go-annotations"/>
     <post-process name="legfed-create-ontology-parent-annotations"/>
-    <post-process name="legfed-create-proteindomain-references"/>
     <post-process name="legfed-create-protein-gene-references"/>
     <post-process name="legfed-create-qtl-linkagegroup-references"/>
 

@@ -8,36 +8,37 @@ echo "##########################################################################
 echo "###################################### integrate #################################################"
 echo "##################################################################################################"
 
-## ontologies
+# ## ontologies
 # ./gradlew integrate -Psource=go
 # ./gradlew integrate -Psource=so
 # ./gradlew integrate -Psource=to
 # ./gradlew integrate -Psource=po
 
-## LIS chado
-#./gradlew integrate -Psource=lis-genomics
-#./gradlew integrate -Psource=lis-genetics
-#./gradlew integrate -Psource=lis-featureprop
-#./gradlew integrate -Psource=lis-genefamilies
-#./gradlew integrate -Psource=lis-reactome-file
+# # ## LIS chado
+# ./gradlew integrate -Psource=lis-genomics --stacktrace
+# ./gradlew integrate -Psource=lis-featureprop --stacktrace
+# ./gradlew integrate -Psource=lis-genefamilies --stacktrace
+# ./gradlew integrate -Psource=lis-reactome-file --stacktrace
 
 ## PeanutBase chado
-#./gradlew integrate -Psource=peanutbase-genetics --stacktrace
-#./gradlew integrate -Psource=peanutbase-featureprop --stacktrace
+# ./gradlew integrate -Psource=peanutbase-genetics --stacktrace
+# ./gradlew integrate -Psource=peanutbase-featureprop --stacktrace
 
-## ---------------------------------------------------------------------------------------------------------
-## - ALL of the chado loaders must be DONE before continuing, because identifiers are changed by SQL below -
-## ---------------------------------------------------------------------------------------------------------
+# ## ---------------------------------------------------------------------------------------------------------
+# ## - ALL of the chado loaders must be DONE before continuing, because identifiers are changed by SQL below -
+# ## ---------------------------------------------------------------------------------------------------------
 
-./gradlew generateUpdateTriggers
-psql peanutmine-dev -f dbmodel/build/resources/main/add-update-triggers.sql
-psql peanutmine-dev -f ../legfed-intermine-sql/update-organism-genus-species.sql
-psql peanutmine-dev -f ../legfed-intermine-sql/update-organism-descriptions.sql
-psql peanutmine-dev -f ../legfed-intermine-sql/update-strain-descriptions.sql
-psql peanutmine-dev -f ../legfed-intermine-sql/update-identifiers.sql
-psql peanutmine-dev -f dbmodel/build/resources/main/remove-update-triggers.sql
+# ## SQL updates
+# ./gradlew generateUpdateTriggers
+# psql peanutmine-dev -f dbmodel/build/resources/main/add-update-triggers.sql
+# psql peanutmine-dev -f ../legfed-intermine-sql/cleanup-chado-bugs.sql
+# psql peanutmine-dev -f ../legfed-intermine-sql/update-identifiers.sql
+# psql peanutmine-dev -f ../legfed-intermine-sql/update-organism-genus-species.sql
+# psql peanutmine-dev -f ../legfed-intermine-sql/update-organism-descriptions.sql
+# psql peanutmine-dev -f ../legfed-intermine-sql/update-strain-descriptions.sql
+# psql peanutmine-dev -f dbmodel/build/resources/main/remove-update-triggers.sql
 
-## files
-./gradlew integrate -Psource=peanut-geneticmarker-gff
-./gradlew integrate -Psource=peanut-synteny-gff
-./gradlew integrate -Psource=peanut-expression
+# ## files
+# ./gradlew integrate -Psource=peanut-geneticmarker-gff --stacktrace
+# ./gradlew integrate -Psource=peanut-synteny-gff --stacktrace
+# ./gradlew integrate -Psource=peanut-expression --stacktrace

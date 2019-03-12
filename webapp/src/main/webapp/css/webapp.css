@@ -94,6 +94,7 @@ table td {
 
 li {
     margin-left: 30px;
+    padding: 10px 0;
 }
 
 /* =HEADER TOP
@@ -1737,12 +1738,11 @@ div.bottom-footer ul.footer-links li:not(:last-child):after { content:'|'; color
 div.bottom-footer ul.footer-links li a { text-decoration:none; text-transform:capitalize; }
 
 .begin-thirdBox {
-    margin-left:14px;
-    height:80px;
-    width:250px;
-    padding:5px;
+    height: 80px;
+    width: 250px;
+    padding: 5px;
     text-align:center;
-    background-color:lightgray;
-    border:2px solid gray;
-    font-size:12px;
+    background-color: lightgray;
+    border: 2px solid gray;
+    font-size: 12px;
 }
