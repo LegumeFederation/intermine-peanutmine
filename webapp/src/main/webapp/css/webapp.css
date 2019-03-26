@@ -1726,16 +1726,43 @@ width:90%;}
 .funding-footer .cite { text-align:justify; }
 
 
-div.bottom-footer { margin:0 auto; width:940px; margin-top:20px; }
-div.bottom-footer a.cambridge-logo { float:right; }
+div.bottom-footer {
+    margin:0 auto; width:940px;
+    margin-top:20px;
+}
+div.bottom-footer a.cambridge-logo {
+    float:right;
+}
 
-div.bottom-footer ul.footer-links,
-div.bottom-footer p.footer-copy { list-style-type:none; display:block; float:left; width:450px; font-size:11px; margin:0;
-        margin-bottom:10px; }
-div.bottom-footer ul.footer-links li { display:block; float:left; margin:0; }
-div.bottom-footer ul.footer-links li:not(:last-child) { margin-right:5px; }
-div.bottom-footer ul.footer-links li:not(:last-child):after { content:'|'; color:#E2E1E6; display:block; float:right; margin-left:5px; }
-div.bottom-footer ul.footer-links li a { text-decoration:none; text-transform:capitalize; }
+div.bottom-footer ul.footer-links, div.bottom-footer p.footer-copy {
+    list-style-type:none;
+    display:block;
+    float:left;
+    width:450px;
+    font-size:11px;
+    margin:0;
+    margin-bottom:10px;
+}
+div.bottom-footer ul.footer-links li {
+    display:block;
+    float:left;
+    margin:0;
+    padding:0;
+}
+div.bottom-footer ul.footer-links li:not(:last-child) {
+    margin-right:5px;
+}
+div.bottom-footer ul.footer-links li:not(:last-child):after {
+    content:'|';
+    color:#E2E1E6;
+    display:block;
+    float:right;
+    margin-left:5px;
+}
+div.bottom-footer ul.footer-links li a {
+    text-decoration:none;
+    text-transform:capitalize;
+}
 
 .begin-thirdBox {
     height: 80px;
