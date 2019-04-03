@@ -3,6 +3,10 @@
 ## clear the logs (quietly)
 rm -f intermine.log
 
+##############################################
+# DO NOT RUN UNTIL CHECKING properties FILE! #
+##############################################
+
 ## echo a big marker so we can see when this run started in the scroll
 echo "##################################################################################################"
 echo "###################################### integrate #################################################"
