@@ -1,48 +1,67 @@
 #!/bin/sh
-
-## clear the logs (quietly)
 rm -f intermine.log
 
-##############################################
-# DO NOT RUN UNTIL CHECKING properties FILE! #
-##############################################
+echo ""
+echo "##########################################################################################################################################"
+echo "##########################################################################################################################################"
+echo "#################################################### PEANUTMINE INTEGRATE ################################################################"
+echo "##########################################################################################################################################"
+echo "##########################################################################################################################################"
+echo ""
 
-## echo a big marker so we can see when this run started in the scroll
-echo "##################################################################################################"
-echo "###################################### integrate #################################################"
-echo "##################################################################################################"
+## ontologies and InterPro
+./gradlew integrate -Psource=so --stacktrace
+./gradlew integrate -Psource=go --stacktrace
 
-# ## ontologies
-# ./gradlew integrate -Psource=go
-# ./gradlew integrate -Psource=so
-# ./gradlew integrate -Psource=to
-# ./gradlew integrate -Psource=po
+./gradlew integrate -Psource=plant-ontology --stacktrace
+./gradlew integrate -Psource=plant-trait-ontology --stacktrace
 
-# # ## LIS chado
-# ./gradlew integrate -Psource=lis-genomics --stacktrace
-# ./gradlew integrate -Psource=lis-featureprop --stacktrace
-# ./gradlew integrate -Psource=lis-genefamilies --stacktrace
-# ./gradlew integrate -Psource=lis-reactome-file --stacktrace
+./gradlew integrate -Psource=interpro --stacktrace
+./gradlew integrate -Psource=interpro-go --stacktrace
 
-## PeanutBase chado
-# ./gradlew integrate -Psource=peanutbase-genetics --stacktrace
-# ./gradlew integrate -Psource=peanutbase-featureprop --stacktrace
+## LIS gene families
+./gradlew integrate -Psource=lis.fam1-genefamily --stacktrace
 
-# ## ---------------------------------------------------------------------------------------------------------
-# ## - ALL of the chado loaders must be DONE before continuing, because identifiers are changed by SQL below -
-# ## ---------------------------------------------------------------------------------------------------------
+###########
+## aradu ##
+###########
 
-# ## SQL updates
-# ./gradlew generateUpdateTriggers
-# psql peanutmine-dev -f dbmodel/build/resources/main/add-update-triggers.sql
-# psql peanutmine-dev -f ../legfed-intermine-sql/cleanup-chado-bugs.sql
-# psql peanutmine-dev -f ../legfed-intermine-sql/update-identifiers.sql
-# psql peanutmine-dev -f ../legfed-intermine-sql/update-organism-genus-species.sql
-# psql peanutmine-dev -f ../legfed-intermine-sql/update-organism-descriptions.sql
-# psql peanutmine-dev -f ../legfed-intermine-sql/update-strain-descriptions.sql
-# psql peanutmine-dev -f dbmodel/build/resources/main/remove-update-triggers.sql
+./gradlew integrate -Psource=aradu-about --stacktrace
 
-# ## files
-# ./gradlew integrate -Psource=peanut-geneticmarker-gff --stacktrace
-# ./gradlew integrate -Psource=peanut-synteny-gff --stacktrace
-# ./gradlew integrate -Psource=peanut-expression --stacktrace
+## aradu.V14167
+./gradlew integrate -Psource=aradu.V14167.gnm1-chromosome-fasta --stacktrace
+./gradlew integrate -Psource=aradu.V14167.gnm1.ann1-gff --stacktrace
+./gradlew integrate -Psource=aradu.V14167.gnm1.ann1-protein-fasta --stacktrace
+./gradlew integrate -Psource=aradu.V14167.gnm1.ann1.syn1-synteny --stacktrace
+./gradlew integrate -Psource=aradu.V14167.gnm1.ann1-gfa --stacktrace
+
+###########
+## araip ##
+###########
+
+./gradlew integrate -Psource=araip-about --stacktrace
+
+## araip.K30076
+./gradlew integrate -Psource=araip.K30076.gnm1-chromosome-fasta --stacktrace
+./gradlew integrate -Psource=araip.K30076.gnm1.ann1-gff --stacktrace
+./gradlew integrate -Psource=araip.K30076.gnm1.ann1-protein-fasta --stacktrace
+./gradlew integrate -Psource=araip.K30076.gnm1.ann1.syn1-synteny --stacktrace
+
+###########
+## arahy ##
+###########
+
+./gradlew integrate -Psource=arahy-about --stacktrace
+
+## arahy.Tifrunner.gnm1
+./gradlew integrate -Psource=arahy.Tifrunner.gnm1-chromosome-fasta --stacktrace
+./gradlew integrate -Psource=arahy.Tifrunner.gnm1.ann1-gff --stacktrace
+./gradlew integrate -Psource=arahy.Tifrunner.gnm1.ann1-protein-fasta --stacktrace
+./gradlew integrate -Psource=arahy.Tifrunner.gnm1.ann1-gfa --stacktrace
+
+## arahy.Tifrunner.gnm2
+./gradlew integrate -Psource=arahy.Tifrunner.gnm2-chromosome-fasta --stacktrace
+./gradlew integrate -Psource=arahy.Tifrunner.gnm2.ann1-cds-fasta --stacktrace
+./gradlew integrate -Psource=arahy.Tifrunner.gnm2.ann1-gff --stacktrace
+./gradlew integrate -Psource=arahy.Tifrunner.gnm2.ann1-protein-fasta --stacktrace
+./gradlew integrate -Psource=arahy.Tifrunner.gnm2.ann1-mrna-fasta --stacktrace

@@ -23,8 +23,8 @@
 <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/1.2.4/js/dataTables.buttons.min.js"></script>
 
 <!-- canvasXpress -->
-<link rel="stylesheet" type="text/css" href="css/canvasXpress.css" />
-<script type="text/javascript" src="js/canvasXpress.min.js"></script>
+<link rel="stylesheet" href="https://www.canvasxpress.org/dist/canvasXpress.css"type="text/css"/>
+<script type="text/javascript"src="https://www.canvasxpress.org/dist/canvasXpress.min.js"></script>
 
 <%
 /* In Safari, loading a css that doesnt exist causes weirdness */
