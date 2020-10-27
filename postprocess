@@ -1,14 +1,16 @@
 #!/bin/sh
-
-## clear the logs (quietly)
-rm -f intermine.log
+rm -f *.log
 
 ## echo a big marker so we can see when this run started in the scroll
-echo "##################################################################################################"
-echo "##################################### postprocess ################################################"
-echo "##################################################################################################"
+echo ""
+echo "#######################################################################################"
+echo "#######################################################################################"
+echo "################################### POSTPROCESS #######################################"
+echo "#######################################################################################"
+echo "#######################################################################################"
+echo ""
 
-# ## IM CORE
+## IM CORE
 # ./gradlew postprocess -Pprocess=do-sources
 # ./gradlew postprocess -Pprocess=create-utr-references
 # ./gradlew postprocess -Pprocess=create-references
@@ -19,7 +21,7 @@ echo "##########################################################################
 # ./gradlew postprocess -Pprocess=populate-child-features
 # ./gradlew postprocess -Pprocess=create-gene-flanking-features
 
-# ## LIS
+## LIS
 # ./gradlew postprocess -Pprocess=lis-populate-cds-gene-references
 # ./gradlew postprocess -Pprocess=lis-populate-cds-protein-references
 # ./gradlew postprocess -Pprocess=lis-populate-cds-transcript-references
@@ -30,7 +32,7 @@ echo "##########################################################################
 # ./gradlew postprocess -Pprocess=lis-populate-transcript-protein-references
 # ./gradlew postprocess -Pprocess=lis-populate-protein-pathway-collections
 
-# ## VIEWS AND INDEXES
+## VIEWS AND INDEXES
 # ./gradlew postprocess -Pprocess=create-location-overlap-index
 # ./gradlew postprocess -Pprocess=create-overlap-view
 # ./gradlew postprocess -Pprocess=create-attribute-indexes
