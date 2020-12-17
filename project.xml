@@ -445,6 +445,31 @@
       <property name="src.data.dir" location="/data/LIS/Arachis_hypogaea/Tifrunner.gnm2.ann1.4K0L"/>
     </source>
 
+    <!-- Tifrunner.gnm1.mrk.CZJX -->
+    <!-- ├── arahy.Tifrunner.gnm1.mrk.CZJX.Axiom_Arachis2_SNP.gff3 -->
+    <!-- └── arahy.Tifrunner.gnm1.mrk.CZJX.Axiom_Arachis_58K_SNP.gff3 -->
+    <source name="arahy.Tifrunner.gnm1.mrk-gff" type="lis-gff" dump="true">
+      <property name="gff3.dataSetTitle" value="arahy.Tifrunner.gnm1.mrk.CZJX"/>
+      <property name="gff3.dataSetUrl" value="https://legumeinfo.org/data/public/Arachis_hypogaea/Tifrunner.gnm1.mrk.CZJX/"/>
+      <property name="gff3.dataSetDescription" value="Genetic marker positions on the arahy.Tifrunner.gnm1 genome assembly"/>
+      <property name="gff3.dataSetVersion" value="gnm1"/>
+      <property name="gff3.licence" value="ODC Public Domain Dedication and Licence (PDDL)"/>
+      <property name="gff3.taxonId" value="3818"/>
+      <property name="gff3.strainIdentifier" value="Tifrunner"/>
+      <property name="src.data.dir" location="/data/LIS/Arachis_hypogaea/Tifrunner.gnm1.mrk.CZJX"/>
+    </source>
+
+    <!-- mixed.gwas.V77H/ -->
+    <!-- ├── arahy.mixed.gwas.V77H.2020NAMFlor7.gwas.tsv -->
+    <!-- ├── arahy.mixed.gwas.V77H.2020NAMTiffr.gwas.tsv -->
+    <!-- ├── arahy.mixed.gwas.V77H.us_core_oil.gwas.tsv -->
+    <!-- └── arahy.mixed.gwas.V77H.us_core_oil.phen.tsv -->
+    <source name="arahy.mixed-gwas" type="lis-gwas" dump="true">
+      <property name="dataSetUrl" value="https://legumeinfo.org/data/public/Arachis_hypogaea/mixed.gwas.V77H/"/>
+      <property name="dataSetDescription" value="Arachis hypogaea GWAS experiments."/>
+      <property name="src.data.dir" location="/data/LIS/Arachis_hypogaea/mixed.gwas.V77H"/>
+    </source>
+
     
     <!-- ############### -->
     <!-- ONTOLOGIES ETC. -->
