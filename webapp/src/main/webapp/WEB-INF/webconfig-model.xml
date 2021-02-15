@@ -121,9 +121,9 @@
       <fieldconfig fieldExpr="geneFamilyScore" label="Gene family score"/>
       <fieldconfig fieldExpr="geneFamily.description" label="Gene family"/>
     </fields>
-    <bagdisplayers>
-      <displayer src="heatMap.tile" showOnLeft="true" />
-    </bagdisplayers>
+    <!-- <bagdisplayers> -->
+    <!--   <displayer src="heatMap.tile" showOnLeft="true" /> -->
+    <!-- </bagdisplayers> -->
   </class>
 
   <!-- extends SequenceFeature; needed for bagdisplayer -->
@@ -341,72 +341,72 @@
     </fields>
   </class>
 
-  <class className="org.intermine.model.bio.ExpressionSource">
-    <headerconfig>
-      <titles>
-        <title mainTitles="identifier" numberofMainTitlesToShow="1" />
-      </titles>
-    </headerconfig>
-    <fields>
-      <fieldconfig fieldExpr="identifier" label="Name"/>
-      <fieldconfig fieldExpr="geoSeries" label="NCBI GEO Accession"/>
-      <fieldconfig fieldExpr="bioProject.accession" label="NCBI BioProject"/>
-      <fieldconfig fieldExpr="sra" label="NCBI SRA"/>
-    </fields>
-  </class>
+  <!-- <class className="org.intermine.model.bio.ExpressionSource"> -->
+  <!--   <headerconfig> -->
+  <!--     <titles> -->
+  <!--       <title mainTitles="identifier" numberofMainTitlesToShow="1" /> -->
+  <!--     </titles> -->
+  <!--   </headerconfig> -->
+  <!--   <fields> -->
+  <!--     <fieldconfig fieldExpr="identifier" label="Name"/> -->
+  <!--     <fieldconfig fieldExpr="geoSeries" label="NCBI GEO Accession"/> -->
+  <!--     <fieldconfig fieldExpr="bioProject.accession" label="NCBI BioProject"/> -->
+  <!--     <fieldconfig fieldExpr="sra" label="NCBI SRA"/> -->
+  <!--   </fields> -->
+  <!-- </class> -->
 
-  <class className="org.intermine.model.bio.ExpressionSample">
-    <headerconfig>
-      <titles>
-        <title mainTitles="primaryIdentifier" numberofMainTitlesToShow="1" />
-      </titles>
-    </headerconfig>
-    <fields>
-      <fieldconfig fieldExpr="primaryIdentifier" label="LIS Identifier"/>
-      <fieldconfig fieldExpr="name" label="Name"/>
-      <fieldconfig fieldExpr="description" label="Description"/>
-      <fieldconfig fieldExpr="bioSample" label="NCBI BioSample"/>
-    </fields>
-  </class>
+  <!-- <class className="org.intermine.model.bio.ExpressionSample"> -->
+  <!--   <headerconfig> -->
+  <!--     <titles> -->
+  <!--       <title mainTitles="primaryIdentifier" numberofMainTitlesToShow="1" /> -->
+  <!--     </titles> -->
+  <!--   </headerconfig> -->
+  <!--   <fields> -->
+  <!--     <fieldconfig fieldExpr="primaryIdentifier" label="LIS Identifier"/> -->
+  <!--     <fieldconfig fieldExpr="name" label="Name"/> -->
+  <!--     <fieldconfig fieldExpr="description" label="Description"/> -->
+  <!--     <fieldconfig fieldExpr="bioSample" label="NCBI BioSample"/> -->
+  <!--   </fields> -->
+  <!-- </class> -->
 
-  <class className="org.intermine.model.bio.ExpressionValue">
-    <fields>
-      <fieldconfig fieldExpr="expressionSample.source.identifier" label="Source"/>
-      <fieldconfig fieldExpr="expressionSample.primaryIdentifier" label="Sample ID"/>
-      <fieldconfig fieldExpr="expressionSample.description" label="Sample Description"/>
-      <fieldconfig fieldExpr="value" label="Value"/>
-      <fieldconfig fieldExpr="unit" label="Unit"/>
-    </fields>
-  </class>
+  <!-- <class className="org.intermine.model.bio.ExpressionValue"> -->
+  <!--   <fields> -->
+  <!--     <fieldconfig fieldExpr="expressionSample.source.identifier" label="Source"/> -->
+  <!--     <fieldconfig fieldExpr="expressionSample.primaryIdentifier" label="Sample ID"/> -->
+  <!--     <fieldconfig fieldExpr="expressionSample.description" label="Sample Description"/> -->
+  <!--     <fieldconfig fieldExpr="value" label="Value"/> -->
+  <!--     <fieldconfig fieldExpr="unit" label="Unit"/> -->
+  <!--   </fields> -->
+  <!-- </class> -->
 
-  <class className="org.intermine.model.bio.GWAS">
-    <headerconfig>
-      <titles>
-        <title mainTitles="name|primaryIdentifier" numberofMainTitlesToShow="2" />
-      </titles>
-    </headerconfig>
-    <fields>
-      <fieldconfig fieldExpr="primaryIdentifier" label="LIS Identifier"/>
-      <fieldconfig fieldExpr="name" label="Name"/>
-      <fieldconfig fieldExpr="platformName" label="Genotyping Platform"/>
-      <fieldconfig fieldExpr="platformDetails" label="Genotyping details"/>
-    </fields>
-  </class>
+  <!-- <class className="org.intermine.model.bio.GWAS"> -->
+  <!--   <headerconfig> -->
+  <!--     <titles> -->
+  <!--       <title mainTitles="name|primaryIdentifier" numberofMainTitlesToShow="2" /> -->
+  <!--     </titles> -->
+  <!--   </headerconfig> -->
+  <!--   <fields> -->
+  <!--     <fieldconfig fieldExpr="primaryIdentifier" label="LIS Identifier"/> -->
+  <!--     <fieldconfig fieldExpr="name" label="Name"/> -->
+  <!--     <fieldconfig fieldExpr="platformName" label="Genotyping Platform"/> -->
+  <!--     <fieldconfig fieldExpr="platformDetails" label="Genotyping details"/> -->
+  <!--   </fields> -->
+  <!-- </class> -->
 
-  <class className="org.intermine.model.bio.GWASResult">
-    <headerconfig>
-      <titles>
-        <title mainTitles="identifier|marker.secondaryIdentifier" numberofMainTitlesToShow="2" />
-      </titles>
-    </headerconfig>
-    <fields>
-      <fieldconfig fieldExpr="gwas.primaryIdentifier" label="GWAS"/>
-      <fieldconfig fieldExpr="identifier" />
-      <fieldconfig fieldExpr="phenotype.primaryIdentifier" label="Phenotype"/>
-      <fieldconfig fieldExpr="marker.secondaryIdentifier" label="Marker"/>
-      <fieldconfig fieldExpr="pValue" label="p-value"/>
-    </fields>
-  </class>
+  <!-- <class className="org.intermine.model.bio.GWASResult"> -->
+  <!--   <headerconfig> -->
+  <!--     <titles> -->
+  <!--       <title mainTitles="identifier|marker.secondaryIdentifier" numberofMainTitlesToShow="2" /> -->
+  <!--     </titles> -->
+  <!--   </headerconfig> -->
+  <!--   <fields> -->
+  <!--     <fieldconfig fieldExpr="gwas.primaryIdentifier" label="GWAS"/> -->
+  <!--     <fieldconfig fieldExpr="identifier" /> -->
+  <!--     <fieldconfig fieldExpr="phenotype.primaryIdentifier" label="Phenotype"/> -->
+  <!--     <fieldconfig fieldExpr="marker.secondaryIdentifier" label="Marker"/> -->
+  <!--     <fieldconfig fieldExpr="pValue" label="p-value"/> -->
+  <!--   </fields> -->
+  <!-- </class> -->
 
   <class className="org.intermine.model.bio.Phenotype">
     <headerconfig>
@@ -487,17 +487,17 @@
     <!--                  types="GenotypingStudy"/> -->
 
 
-    <reportdisplayer javaClass="org.ncgr.intermine.bio.web.displayer.GeneBarchartDisplayer"
-                     jspName="model/geneBarchartDisplayer.jsp"
-                     replacesFields=""
-                     placement="summary"
-                     types="Gene"/>
+    <!-- <reportdisplayer javaClass="org.ncgr.intermine.bio.web.displayer.GeneBarchartDisplayer" -->
+    <!--                  jspName="model/geneBarchartDisplayer.jsp" -->
+    <!--                  replacesFields="" -->
+    <!--                  placement="summary" -->
+    <!--                  types="Gene"/> -->
 
-    <reportdisplayer javaClass="org.ncgr.intermine.bio.web.displayer.GWASDisplayer"
-                     jspName="model/gwasDisplayer.jsp"
-                     replacesFields=""
-                     placement="summary"
-                     types="GWAS"/>
+    <!-- <reportdisplayer javaClass="org.ncgr.intermine.bio.web.displayer.GWASDisplayer" -->
+    <!--                  jspName="model/gwasDisplayer.jsp" -->
+    <!--                  replacesFields="" -->
+    <!--                  placement="summary" -->
+    <!--                  types="GWAS"/> -->
     
   </reportdisplayers>
 
