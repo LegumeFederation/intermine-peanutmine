@@ -379,34 +379,34 @@
   <!--   </fields> -->
   <!-- </class> -->
 
-  <!-- <class className="org.intermine.model.bio.GWAS"> -->
-  <!--   <headerconfig> -->
-  <!--     <titles> -->
-  <!--       <title mainTitles="name|primaryIdentifier" numberofMainTitlesToShow="2" /> -->
-  <!--     </titles> -->
-  <!--   </headerconfig> -->
-  <!--   <fields> -->
-  <!--     <fieldconfig fieldExpr="primaryIdentifier" label="LIS Identifier"/> -->
-  <!--     <fieldconfig fieldExpr="name" label="Name"/> -->
-  <!--     <fieldconfig fieldExpr="platformName" label="Genotyping Platform"/> -->
-  <!--     <fieldconfig fieldExpr="platformDetails" label="Genotyping details"/> -->
-  <!--   </fields> -->
-  <!-- </class> -->
+  <class className="org.intermine.model.bio.GWAS">
+    <headerconfig>
+      <titles>
+        <title mainTitles="name|primaryIdentifier" numberofMainTitlesToShow="2" />
+      </titles>
+    </headerconfig>
+    <fields>
+      <fieldconfig fieldExpr="primaryIdentifier" label="LIS Identifier"/>
+      <fieldconfig fieldExpr="name" label="Name"/>
+      <fieldconfig fieldExpr="platformName" label="Genotyping Platform"/>
+      <fieldconfig fieldExpr="platformDetails" label="Genotyping details"/>
+    </fields>
+  </class>
 
-  <!-- <class className="org.intermine.model.bio.GWASResult"> -->
-  <!--   <headerconfig> -->
-  <!--     <titles> -->
-  <!--       <title mainTitles="identifier|marker.secondaryIdentifier" numberofMainTitlesToShow="2" /> -->
-  <!--     </titles> -->
-  <!--   </headerconfig> -->
-  <!--   <fields> -->
-  <!--     <fieldconfig fieldExpr="gwas.primaryIdentifier" label="GWAS"/> -->
-  <!--     <fieldconfig fieldExpr="identifier" /> -->
-  <!--     <fieldconfig fieldExpr="phenotype.primaryIdentifier" label="Phenotype"/> -->
-  <!--     <fieldconfig fieldExpr="marker.secondaryIdentifier" label="Marker"/> -->
-  <!--     <fieldconfig fieldExpr="pValue" label="p-value"/> -->
-  <!--   </fields> -->
-  <!-- </class> -->
+  <class className="org.intermine.model.bio.GWASResult">
+    <headerconfig>
+      <titles>
+        <title mainTitles="identifier|marker.secondaryIdentifier" numberofMainTitlesToShow="2" />
+      </titles>
+    </headerconfig>
+    <fields>
+      <fieldconfig fieldExpr="gwas.primaryIdentifier" label="GWAS"/>
+      <fieldconfig fieldExpr="identifier" />
+      <fieldconfig fieldExpr="phenotype.primaryIdentifier" label="Phenotype"/>
+      <fieldconfig fieldExpr="marker.secondaryIdentifier" label="Marker"/>
+      <fieldconfig fieldExpr="pValue" label="p-value"/>
+    </fields>
+  </class>
 
   <class className="org.intermine.model.bio.Phenotype">
     <headerconfig>
@@ -493,11 +493,11 @@
     <!--                  placement="summary" -->
     <!--                  types="Gene"/> -->
 
-    <!-- <reportdisplayer javaClass="org.ncgr.intermine.bio.web.displayer.GWASDisplayer" -->
-    <!--                  jspName="model/gwasDisplayer.jsp" -->
-    <!--                  replacesFields="" -->
-    <!--                  placement="summary" -->
-    <!--                  types="GWAS"/> -->
+    <reportdisplayer javaClass="org.ncgr.intermine.bio.web.displayer.GWASDisplayer"
+                     jspName="model/gwasDisplayer.jsp"
+                     replacesFields=""
+                     placement="summary"
+                     types="GWAS"/>
     
   </reportdisplayers>
 
