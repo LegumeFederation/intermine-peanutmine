@@ -9,14 +9,9 @@ An InterMine for diploid *Arachis duranensis*, diploid *Arachis ipaensis*, and t
 	<collection name="transcripts" referenced-type="Transcript" reverse-reference="introns"/>
 	<collection name="genes" referenced-type="Gene" reverse-reference="introns"/>
 </class>
-<class name="Allele" extends="SequenceCollection" is-interface="true" term="http://purl.obolibrary.org/obo/SO:0001023">
-	<reference name="gene" referenced-type="Gene" reverse-reference="alleles"/>
-</class>
 <class name="SyntenicRegion" extends="SequenceFeature" is-interface="true" term="http://purl.obolibrary.org/obo/SO_0005858">
 	<reference name="syntenyBlock" referenced-type="SyntenyBlock" reverse-reference="syntenicRegions"/>
 </class>
-<class name="NonLTRRetrotransposon" extends="Retrotransposon" is-interface="true" term="http://purl.obolibrary.org/obo/SO:0000189"></class>
-<class name="Helitron" extends="TransposableElement" is-interface="true" term="http://purl.obolibrary.org/obo/SO:0000544"></class>
 <class name="ProteinMatch" extends="BioEntity" is-interface="true" term="http://purl.obolibrary.org/obo/SO:0000349">
 	<attribute name="length" type="java.lang.Integer"/>
 	<reference name="protein" referenced-type="Protein" reverse-reference="proteinMatches"/>
@@ -29,9 +24,6 @@ An InterMine for diploid *Arachis duranensis*, diploid *Arachis ipaensis*, and t
 	<reference name="marker" referenced-type="GeneticMarker" reverse-reference="gwasResults"/>
 	<collection name="dataSets" referenced-type="DataSet"/>
 </class>
-<class name="EST" extends="Oligo" is-interface="true" term="http://purl.obolibrary.org/obo/SO:0000345">
-	<collection name="overlappingESTSets" referenced-type="OverlappingESTSet" reverse-reference="ESTs"/>
-</class>
 <class name="Transcript" extends="SequenceFeature" is-interface="true" term="http://purl.obolibrary.org/obo/SO:0000673">
 	<attribute name="description" type="java.lang.String"/>
 	<reference name="gene" referenced-type="Gene" reverse-reference="transcripts"/>
@@ -41,25 +33,14 @@ An InterMine for diploid *Arachis duranensis*, diploid *Arachis ipaensis*, and t
 	<collection name="CDSs" referenced-type="CDS" reverse-reference="transcript"/>
 	<collection name="UTRs" referenced-type="UTR" reverse-reference="transcripts"/>
 </class>
-<class name="TerminalInvertedRepeat" extends="TerminalInvertedRepeatElement" is-interface="true" term="http://purl.obolibrary.org/obo/SO:0000481"></class>
-<class name="TransposableElementInsertionSite" extends="SequenceFeature" is-interface="true" term="http://purl.obolibrary.org/obo/SO:0000368"></class>
-<class name="CRM" extends="RegulatoryRegion" is-interface="true" term="http://purl.obolibrary.org/obo/SO:0000727">
-	<collection name="TFBindingSites" referenced-type="TFBindingSite" reverse-reference="CRM"/>
-</class>
-<class name="GoldenPathFragment" extends="SequenceFeature" is-interface="true" term="http://purl.obolibrary.org/obo/SO:0000468"></class>
-<class name="TerminalInvertedRepeatElement" extends="TransposableElement" is-interface="true" term="http://purl.obolibrary.org/obo/SO:0000208"></class>
-<class name="RepeatRegion" extends="SequenceFeature" is-interface="true" term="http://purl.obolibrary.org/obo/SO:0000657"></class>
 <class name="IntergenicRegion" extends="SequenceFeature" is-interface="true" term="http://purl.obolibrary.org/obo/SO:0000605">
 	<collection name="adjacentGenes" referenced-type="Gene"/>
 </class>
-<class name="TransposableElement" extends="MobileGeneticElement" is-interface="true" term="http://purl.obolibrary.org/obo/SO:0000101"></class>
-<class name="SnoRNA" extends="NcRNA" is-interface="true" term="http://purl.obolibrary.org/obo/SO:0000275"></class>
 <class name="Annotatable" is-interface="true">
 	<attribute name="primaryIdentifier" type="java.lang.String" term="http://semanticscience.org/resource/SIO_000675"/>
 	<collection name="ontologyAnnotations" referenced-type="OntologyAnnotation" reverse-reference="subject"/>
 	<collection name="publications" referenced-type="Publication" reverse-reference="entities"/>
 </class>
-<class name="Primer" extends="Oligo" is-interface="true" term="http://purl.obolibrary.org/obo/SO:0000112"></class>
 <class name="GeneticMap" extends="Annotatable" is-interface="true">
 	<attribute name="experimentDescription" type="java.lang.String"/>
 	<attribute name="subject" type="java.lang.String"/>
@@ -88,24 +69,15 @@ An InterMine for diploid *Arachis duranensis*, diploid *Arachis ipaensis*, and t
 	<collection name="results" referenced-type="GWASResult" reverse-reference="gwas"/>
 	<collection name="dataSets" referenced-type="DataSet"/>
 </class>
-<class name="MobileGeneticElement" extends="SequenceFeature" is-interface="true" term="http://purl.obolibrary.org/obo/SO:0001037"></class>
-<class name="MiRNA" extends="NcRNA" is-interface="true" term="http://purl.obolibrary.org/obo/SO:0000276"></class>
-<class name="ChromosomalInversion" extends="ChromosomeStructureVariation" is-interface="true" term="http://purl.obolibrary.org/obo/SO:1000030"></class>
-<class name="RRTract" extends="LTRRetrotransposon" is-interface="true" term="http://purl.obolibrary.org/obo/SO:0000435"></class>
 <class name="UTR" extends="SequenceFeature" is-interface="true" term="http://purl.obolibrary.org/obo/SO:0000203">
 	<reference name="gene" referenced-type="Gene" reverse-reference="UTRs"/>
 	<collection name="transcripts" referenced-type="Transcript" reverse-reference="UTRs"/>
 </class>
-<class name="TFBindingSite" extends="BindingSite RegulatoryRegion" is-interface="true" term="http://purl.obolibrary.org/obo/SO:0000235">
-	<reference name="CRM" referenced-type="CRM" reverse-reference="TFBindingSites"/>
-</class>
-<class name="RRNA" extends="NcRNA" is-interface="true" term="http://purl.obolibrary.org/obo/SO:0000252"></class>
 <class name="Synonym" is-interface="true" term="http://semanticscience.org/resource/SIO_000122">
 	<attribute name="value" type="java.lang.String" term="http://semanticscience.org/resource/SIO_000122"/>
 	<reference name="subject" referenced-type="BioEntity" reverse-reference="synonyms"/>
 	<collection name="dataSets" referenced-type="DataSet"/>
 </class>
-<class name="Retrotransposon" extends="TransposableElement" is-interface="true" term="http://purl.obolibrary.org/obo/SO:0000180"></class>
 <class name="Trait" extends="Annotatable" is-interface="true">
 	<attribute name="description" type="java.lang.String"/>
 	<attribute name="name" type="java.lang.String"/>
@@ -131,18 +103,12 @@ An InterMine for diploid *Arachis duranensis*, diploid *Arachis ipaensis*, and t
 	<collection name="markers" referenced-type="GeneticMarker"/>
 	<collection name="dataSets" referenced-type="DataSet"/>
 </class>
-<class name="Oligo" extends="SequenceFeature" is-interface="true" term="http://purl.obolibrary.org/obo/SO:0000696"></class>
 <class name="SyntenyBlock" is-interface="true">
 	<attribute name="medianKs" type="java.lang.Double"/>
 	<collection name="publications" referenced-type="Publication"/>
 	<collection name="syntenicRegions" referenced-type="SyntenicRegion" reverse-reference="syntenyBlock"/>
 	<collection name="dataSets" referenced-type="DataSet"/>
 </class>
-<class name="MeshTerm" is-interface="true" term="http://edamontology.org/data_0966">
-	<attribute name="name" type="java.lang.String" term="http://edamontology.org/data_2099"/>
-	<collection name="publications" referenced-type="Publication" reverse-reference="meshTerms"/>
-</class>
-<class name="ChromosomeBand" extends="SequenceFeature" is-interface="true" term="http://purl.obolibrary.org/obo/SO:0000341"></class>
 <class name="OntologyAnnotation" is-interface="true" term="http://semanticscience.org/resource/SIO_001166">
 	<attribute name="qualifier" type="java.lang.String" term="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C41009"/>
 	<reference name="subject" referenced-type="Annotatable" reverse-reference="ontologyAnnotations"/>
@@ -151,7 +117,6 @@ An InterMine for diploid *Arachis duranensis*, diploid *Arachis ipaensis*, and t
 	<collection name="evidence" referenced-type="OntologyEvidence"/>
 </class>
 <class name="SOTerm" extends="OntologyTerm" is-interface="true" term="http://edamontology.org/data_0966"></class>
-<class name="TargetSiteDuplication" extends="TransposableElement" is-interface="true" term="http://purl.obolibrary.org/obo/SO:0000434"></class>
 <class name="QTL" is-interface="true" term="http://purl.obolibrary.org/obo/SO:0001645">
 	<attribute name="lod" type="java.lang.Double"/>
 	<attribute name="likelihoodRatio" type="java.lang.Double"/>
@@ -166,10 +131,6 @@ An InterMine for diploid *Arachis duranensis*, diploid *Arachis ipaensis*, and t
 	<reference name="linkageGroup" referenced-type="LinkageGroup" reverse-reference="qtls"/>
 	<collection name="spannedGenes" referenced-type="Gene"/>
 	<collection name="dataSets" referenced-type="DataSet"/>
-</class>
-<class name="OntologyTermSynonym" is-interface="true" term="http://semanticscience.org/resource/SIO_000122">
-	<attribute name="type" type="java.lang.String" term="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C25284"/>
-	<attribute name="name" type="java.lang.String" term="http://edamontology.org/data_2099"/>
 </class>
 <class name="ProteinDomain" extends="BioEntity" is-interface="true">
 	<attribute name="description" type="java.lang.String"/>
@@ -211,7 +172,6 @@ An InterMine for diploid *Arachis duranensis*, diploid *Arachis ipaensis*, and t
 	<collection name="overlappingFeatures" referenced-type="SequenceFeature"/>
 	<collection name="childFeatures" referenced-type="SequenceFeature"/>
 </class>
-<class name="RRNAPrimaryTranscript" extends="Transcript" is-interface="true" term="http://purl.obolibrary.org/obo/SO:0000252"></class>
 <class name="LinkageGroupPosition" is-interface="true">
 	<attribute name="position" type="java.lang.Double"/>
 	<reference name="marker" referenced-type="GeneticMarker"/>
@@ -225,7 +185,6 @@ An InterMine for diploid *Arachis duranensis*, diploid *Arachis ipaensis*, and t
 	<collection name="gwasResults" referenced-type="GWASResult" reverse-reference="marker"/>
 	<collection name="linkageGroupPositions" referenced-type="LinkageGroupPosition"/>
 </class>
-<class name="TRNA" extends="NcRNA" is-interface="true" term="http://purl.obolibrary.org/obo/SO:0000253"></class>
 <class name="Author" is-interface="true" term="http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C42781">
 	<attribute name="firstName" type="java.lang.String" term="http://semanticscience.org/resource/SIO_000181"/>
 	<attribute name="initials" type="java.lang.String"/>
@@ -245,7 +204,6 @@ An InterMine for diploid *Arachis duranensis*, diploid *Arachis ipaensis*, and t
 	<attribute name="shortName" type="java.lang.String" term="http://edamontology.org/data_2909"/>
 	<collection name="strains" referenced-type="Strain" reverse-reference="organism"/>
 </class>
-<class name="LongTerminalRepeat" extends="LTRRetrotransposon" is-interface="true" term="http://purl.obolibrary.org/obo/SO:0000286"></class>
 <class name="Gene" extends="SequenceFeature" is-interface="true" term="http://purl.obolibrary.org/obo/SO:0000704">
 	<attribute name="briefDescription" type="java.lang.String" term="http://semanticscience.org/resource/SIO_000136"/>
 	<attribute name="geneFamilyScoreMeaning" type="java.lang.String"/>
@@ -272,14 +230,11 @@ An InterMine for diploid *Arachis duranensis*, diploid *Arachis ipaensis*, and t
 	<reference name="qtl" referenced-type="QTL"/>
 	<collection name="dataSets" referenced-type="DataSet"/>
 </class>
-<class name="ChromosomalDuplication" extends="ChromosomeStructureVariation" is-interface="true" term="http://purl.obolibrary.org/obo/SO:1000037"></class>
 <class name="ThreePrimeUTR" extends="UTR" is-interface="true" term="http://purl.obolibrary.org/obo/SO:0000205"></class>
 <class name="Exon" extends="SequenceFeature" is-interface="true" term="http://purl.obolibrary.org/obo/SO:0000147">
 	<reference name="gene" referenced-type="Gene" reverse-reference="exons"/>
 	<collection name="transcripts" referenced-type="Transcript" reverse-reference="exons"/>
 </class>
-<class name="SnRNA" extends="NcRNA" is-interface="true" term="http://purl.obolibrary.org/obo/SO:0000274"></class>
-<class name="Enhancer" extends="CRM" is-interface="true" term="http://purl.obolibrary.org/obo/SO:0000165"></class>
 <class name="Protein" extends="BioEntity" is-interface="true" term="http://semanticscience.org/resource/SIO_010043">
 	<attribute name="geneFamilyScoreMeaning" type="java.lang.String"/>
 	<attribute name="md5checksum" type="java.lang.String" term="http://edamontology.org/data_2190"/>
@@ -299,13 +254,6 @@ An InterMine for diploid *Arachis duranensis*, diploid *Arachis ipaensis*, and t
 	<collection name="pathways" referenced-type="Pathway" reverse-reference="proteins"/>
 	<collection name="transcripts" referenced-type="Transcript" reverse-reference="protein"/>
 </class>
-<class name="OverlappingESTSet" extends="SequenceFeature" is-interface="true" term="http://purl.obolibrary.org/obo/SO:0001262">
-	<collection name="ESTs" referenced-type="EST" reverse-reference="overlappingESTSets"/>
-</class>
-<class name="SequenceVariant" is-interface="true" term="http://purl.obolibrary.org/obo/SO:0001060">
-	<collection name="genes" referenced-type="Gene"/>
-</class>
-<class name="ReversePrimer" extends="Primer" is-interface="true" term="http://purl.obolibrary.org/obo/SO:0000132"></class>
 <class name="DataSource" is-interface="true">
 	<attribute name="description" type="java.lang.String" term="http://semanticscience.org/resource/SIO_000136"/>
 	<attribute name="url" type="java.lang.String" term="http://edamontology.org/data_1052"/>
@@ -313,14 +261,11 @@ An InterMine for diploid *Arachis duranensis*, diploid *Arachis ipaensis*, and t
 	<collection name="publications" referenced-type="Publication"/>
 	<collection name="dataSets" referenced-type="DataSet" reverse-reference="dataSource"/>
 </class>
-<class name="LTRRetrotransposon" extends="Retrotransposon" is-interface="true" term="http://purl.obolibrary.org/obo/SO:0000186"></class>
 <class name="OntologyAnnotationEvidenceCode" is-interface="true" term="http://purl.obolibrary.org/obo/ECO_0000000">
 	<attribute name="code" type="java.lang.String"/>
 	<attribute name="url" type="java.lang.String" term="http://edamontology.org/data_1052"/>
 	<attribute name="name" type="java.lang.String" term="http://edamontology.org/data_2099"/>
 </class>
-<class name="MicroarrayOligo" extends="Oligo" is-interface="true" term="http://purl.obolibrary.org/obo/SO:0000328"></class>
-<class name="PCRProduct" extends="SequenceFeature" is-interface="true" term="http://purl.obolibrary.org/obo/SO:0000006"></class>
 <class name="Location" is-interface="true" term="http://purl.obolibrary.org/obo/SO_0000735">
 	<attribute name="strand" type="java.lang.String" term="http://semanticscience.org/resource/SIO_001174"/>
 	<attribute name="start" type="java.lang.Integer" term="http://semanticscience.org/resource/SIO_000943"/>
@@ -329,11 +274,6 @@ An InterMine for diploid *Arachis duranensis*, diploid *Arachis ipaensis*, and t
 	<reference name="feature" referenced-type="BioEntity" reverse-reference="locations"/>
 	<collection name="dataSets" referenced-type="DataSet"/>
 </class>
-<class name="InvertedRepeat" extends="RepeatRegion" is-interface="true" term="http://purl.obolibrary.org/obo/SO:0000294"></class>
-<class name="PointMutation" extends="SequenceFeature" is-interface="true" term="http://purl.obolibrary.org/obo/SO:1000008"></class>
-<class name="ChromosomeStructureVariation" extends="SequenceCollection" is-interface="true" term="http://purl.obolibrary.org/obo/SO:1000183"></class>
-<class name="NaturalTransposableElement" extends="TransposableElement" is-interface="true" term="http://purl.obolibrary.org/obo/SO:0000797"></class>
-<class name="ForwardPrimer" extends="Primer" is-interface="true" term="http://purl.obolibrary.org/obo/SO:0000121"></class>
 <class name="OntologyRelation" is-interface="true">
 	<attribute name="redundant" type="java.lang.Boolean"/>
 	<attribute name="direct" type="java.lang.Boolean"/>
@@ -341,13 +281,11 @@ An InterMine for diploid *Arachis duranensis*, diploid *Arachis ipaensis*, and t
 	<reference name="parentTerm" referenced-type="OntologyTerm"/>
 	<reference name="childTerm" referenced-type="OntologyTerm"/>
 </class>
-<class name="NcRNA" extends="Transcript" is-interface="true" term="http://purl.obolibrary.org/obo/SO:0000655"></class>
 <class name="CrossReference" is-interface="true" term="http://semanticscience.org/resource/SIO_001171">
 	<attribute name="identifier" type="java.lang.String" term="http://semanticscience.org/resource/SIO_000675"/>
 	<reference name="source" referenced-type="DataSource"/>
 	<reference name="subject" referenced-type="BioEntity" reverse-reference="crossReferences"/>
 </class>
-<class name="PrimerBindingSite" extends="LTRRetrotransposon" is-interface="true" term="http://purl.obolibrary.org/obo/SO:0005850"></class>
 <class name="Strain" is-interface="true" term="http://semanticscience.org/resource/SIO_010055">
 	<attribute name="identifier" type="java.lang.String" term="http://edamontology.org/data_2379"/>
 	<attribute name="description" type="java.lang.String"/>
@@ -356,8 +294,6 @@ An InterMine for diploid *Arachis duranensis*, diploid *Arachis ipaensis*, and t
 	<attribute name="accession" type="java.lang.String" term="http://edamontology.org/data_2912"/>
 	<reference name="organism" referenced-type="Organism" reverse-reference="strains"/>
 </class>
-<class name="ChromosomalTranslocation" extends="ChromosomeStructureVariation SequenceFeature" is-interface="true" term="http://purl.obolibrary.org/obo/SO:1000044"></class>
-<class name="TRNAPrimaryTranscript" extends="Transcript" is-interface="true" term="http://purl.obolibrary.org/obo/SO:0000253"></class>
 <class name="OntologyTerm" is-interface="true" term="http://semanticscience.org/resource/SIO_000275">
 	<attribute name="identifier" type="java.lang.String" term="http://semanticscience.org/resource/SIO_000675"/>
 	<attribute name="description" type="java.lang.String" term="http://semanticscience.org/resource/SIO_000136"/>
@@ -395,7 +331,6 @@ An InterMine for diploid *Arachis duranensis*, diploid *Arachis ipaensis*, and t
 	<reference name="publication" referenced-type="Publication"/>
 	<collection name="bioEntities" referenced-type="BioEntity" reverse-reference="dataSets"/>
 </class>
-<class name="ChromosomalDeletion" extends="ChromosomeStructureVariation" is-interface="true" term="http://purl.obolibrary.org/obo/SO:1000029"></class>
 <class name="GeneFamily" is-interface="true">
 	<attribute name="identifier" type="java.lang.String"/>
 	<attribute name="description" type="java.lang.String"/>
@@ -413,16 +348,6 @@ An InterMine for diploid *Arachis duranensis*, diploid *Arachis ipaensis*, and t
 <class name="OntologyEvidence" is-interface="true" term="http://purl.obolibrary.org/obo/ECO_0000000">
 	<reference name="code" referenced-type="OntologyAnnotationEvidenceCode"/>
 	<collection name="publications" referenced-type="Publication"/>
-</class>
-<class name="RegulatoryRegion" extends="SequenceFeature" is-interface="true" term="http://purl.obolibrary.org/obo/SO:0005836">
-	<reference name="gene" referenced-type="Gene" reverse-reference="regulatoryRegions"/>
-</class>
-<class name="CDNAClone" extends="SequenceFeature" is-interface="true" term="http://purl.obolibrary.org/obo/SO:0000317"></class>
-<class name="TRIMRetrotransposon" extends="Retrotransposon" is-interface="true" term="http://purl.obolibrary.org/obo/SO:0002261"></class>
-<class name="BindingSite" extends="SequenceFeature" is-interface="true" term="http://purl.obolibrary.org/obo/SO:0000409"></class>
-<class name="TransposableElementGene" extends="Gene" is-interface="true" term="http://purl.obolibrary.org/obo/SO:0000111"></class>
-<class name="SequenceCollection" extends="BioEntity" is-interface="true" term="http://purl.obolibrary.org/obo/SO:0001260">
-	<reference name="sequenceOntologyTerm" referenced-type="SOTerm"/>
 </class>
 <class name="Sequence" is-interface="true" term="http://edamontology.org/data_2044">
 	<attribute name="md5checksum" type="java.lang.String" term="http://edamontology.org/data_2190"/>
@@ -445,8 +370,6 @@ An InterMine for diploid *Arachis duranensis*, diploid *Arachis ipaensis*, and t
 	<collection name="entities" referenced-type="Annotatable" reverse-reference="publications"/>
 	<collection name="meshTerms" referenced-type="MeshTerm" reverse-reference="publications"/>
 </class>
-<class name="ChromosomalTransposition" extends="ChromosomeStructureVariation" is-interface="true" term="http://purl.obolibrary.org/obo/SO:0000453"></class>
-<class name="PreMiRNA" extends="Transcript" is-interface="true" term="http://purl.obolibrary.org/obo/SO:0001244"></class>
 <class name="CDS" extends="SequenceFeature" is-interface="true" term="http://purl.obolibrary.org/obo/SO:0000316">
 	<reference name="gene" referenced-type="Gene" reverse-reference="CDSs"/>
 	<reference name="transcript" referenced-type="Transcript" reverse-reference="CDSs"/>
