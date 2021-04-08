@@ -24,12 +24,11 @@ h2 { margin-bottom:10px; }
 #object_header p.description img { vertical-align:top; }
 
 #object_header td.label,
-#object_header span.label { min-width:100px; display:inline-block; white-space:nowrap; }
+#object_header span.label { text-align:right; font-weight:bold; white-space:normal; }
 
 /* header items */
 #object_header table.fields tr td:not(:first-child) { padding-right:20px; }
 #object_header table.fields td {
-    max-width: 500px;
     vertical-align: top;
 }
 

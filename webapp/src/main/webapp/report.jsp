@@ -83,43 +83,30 @@
                         <%-- <script> imSummaryFields["${field.name}"] = "${field.value}";</script> --%>
                         <script> imSummaryFields["${field.name}"] = "${fn:replace(field.value, newLineChar, "; ")}";</script>
 
-
-                        <c:if test="${tableCount %2 == 0}">
-                            <c:choose>
-                                <c:when test="${tableCount == 0}">
-                                    <tr>
-                                </c:when>
-                                <c:otherwise>
-                                    </tr><tr>
-                                </c:otherwise>
-                            </c:choose>
-                        </c:if>
-
+                        <tr>
                         <c:set var="fieldDisplayText"
                                value="${imf:formatFieldChain(field.pathString, INTERMINE_API, WEBCONFIG)}"/>
                         <c:choose>
                             <c:when test="${field.valueHasDisplayer}">
-                                <td class="label">
-                                    ${fieldDisplayText}&nbsp;
-                                    <im:typehelp type="${field.pathString}"/>
-                                </td>
-                                <td><strong>
+                                <td class="label">${fieldDisplayText}<im:typehelp type="${field.pathString}"/></td>
+                                <td>
                                     <!-- pass value to displayer -->
                                     <c:set var="interMineObject" value="${object.object}" scope="request"/>
                                     <tiles:insert page="${field.displayerPage}">
                                         <tiles:put name="expr" value="${field.name}" />
                                     </tiles:insert>
-                                </strong></td>
+                                </td>
                                 <c:set var="tableCount" value="${tableCount+1}" scope="page" />
                             </c:when>
                             <c:otherwise>
                                 <c:if test="${!field.doNotTruncate && !empty field.value}">
                                     <td class="label">${fieldDisplayText}&nbsp;<im:typehelp type="${field.pathString}"/></td>
-                                    <td><strong><c:out escapeXml="${field.escapeXml}" value="${field.value}" /></strong></td>
+                                    <td><c:out escapeXml="${field.escapeXml}" value="${field.value}" /></td>
                                     <c:set var="tableCount" value="${tableCount+1}" scope="page" />
                                 </c:if>
                             </c:otherwise>
                         </c:choose>
+                        </tr>
                     </c:forEach>
                 </table>
 
@@ -130,7 +117,7 @@
                             <tr>
                                 <c:if test="${!empty field.value}">
                                     <td class="label">${field.name}&nbsp;<im:typehelp type="${field.pathString}"/></td>
-                                    <td><strong><c:out escapeXml="${field.escapeXml}" value="${field.value}" /></strong></td>
+                                    <td><c:out escapeXml="${field.escapeXml}" value="${field.value}" /></td>
                                 </c:if>
                             </tr>
                         </c:if>
