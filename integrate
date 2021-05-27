@@ -9,77 +9,95 @@ echo "##########################################################################
 echo "##########################################################################################################################################"
 echo ""
 
-## ontologies and InterPro
-./gradlew integrate -Psource=so --stacktrace
-./gradlew integrate -Psource=go --stacktrace
-./gradlew integrate -Psource=plant-ontology --stacktrace
-./gradlew integrate -Psource=plant-trait-ontology --stacktrace
-./gradlew integrate -Psource=interpro --stacktrace
-./gradlew integrate -Psource=interpro-go --stacktrace
+# ## ontologies and InterPro
+# ./gradlew integrate -Psource=so --stacktrace
+# ./gradlew integrate -Psource=go --stacktrace
+# ./gradlew integrate -Psource=interpro --stacktrace
+# ./gradlew integrate -Psource=interpro-go --stacktrace
+# ./gradlew integrate -Psource=plant-ontology --stacktrace
+# ./gradlew integrate -Psource=plant-trait-ontology --stacktrace
 
-## LIS gene families
-./gradlew integrate -Psource=legume.genefam.fam1.M65K --stacktrace
+# ## LIS gene families
+# ./gradlew integrate -Psource=legume.genefam.fam1.M65K --stacktrace
 
-## about
-./gradlew integrate -Psource=aradu-about --stacktrace
-./gradlew integrate -Psource=araip-about --stacktrace
-./gradlew integrate -Psource=arahy-about --stacktrace
+###########
+## aradu ##
+###########
 
-## aradu.V14167.gnm1
-./gradlew integrate -Psource=aradu.V14167.gnm1.SWBf.genome_main.fna --stacktrace
-./gradlew integrate -Psource=aradu.V14167.gnm1.ann1.cxSM.cds.fna --stacktrace
-./gradlew integrate -Psource=aradu.V14167.gnm1.ann1.cxSM.protein.faa --stacktrace
-./gradlew integrate -Psource=aradu.V14167.gnm1.ann1.cxSM.transcript.fna --stacktrace
-./gradlew integrate -Psource=aradu.V14167.gnm1.ann1.cxSM.gene_models_main.gff3 --stacktrace
-./gradlew integrate -Psource=aradu.V14167.gnm1.ann1.cxSM.legfed_v1_0.M65K.gfa.tsv --stacktrace
-./gradlew integrate -Psource=aradu.V14167.gnm1.ann1.cxSM.pathway.tsv --stacktrace
-./gradlew integrate -Psource=V14167.gnm1.ann1.syn1.qmkW --stacktrace
+# ./gradlew integrate -Psource=aradu-about --stacktrace
 
-## araip.K30076.gnm1
-./gradlew integrate -Psource=araip.K30076.gnm1.bXJ8.genome_main.fna --stacktrace
-./gradlew integrate -Psource=araip.K30076.gnm1.ann1.J37m.protein.faa --stacktrace
-./gradlew integrate -Psource=araip.K30076.gnm1.ann1.J37m.cds.fna --stacktrace
-./gradlew integrate -Psource=araip.K30076.gnm1.ann1.J37m.transcript.fna --stacktrace
-./gradlew integrate -Psource=araip.K30076.gnm1.ann1.J37m.gene_models_main.gff3 --stacktrace
-./gradlew integrate -Psource=araip.K30076.gnm1.ann1.J37m.legfed_v1_0.M65K.gfa.tsv --stacktrace
-./gradlew integrate -Psource=araip.K30076.gnm1.ann1.J37m.pathway.tsv --stacktrace
-./gradlew integrate -Psource=K30076.gnm1.ann1.syn1.S8s4 --stacktrace
+# ## aradu.V14167.gnm1
+# ./gradlew integrate -Psource=aradu.V14167.gnm1.SWBf --stacktrace
+# ./gradlew integrate -Psource=aradu.V14167.gnm1.ann1.cxSM.cds.fna --stacktrace
+# ./gradlew integrate -Psource=aradu.V14167.gnm1.ann1.cxSM.protein.faa --stacktrace
+# ./gradlew integrate -Psource=aradu.V14167.gnm1.ann1.cxSM.transcript.fna --stacktrace
+# ./gradlew integrate -Psource=aradu.V14167.gnm1.ann1.cxSM.gene_models_main.gff3 --stacktrace
+# ./gradlew integrate -Psource=aradu.V14167.gnm1.ann1.cxSM.legfed_v1_0.M65K.gfa.tsv --stacktrace
+# ./gradlew integrate -Psource=aradu.V14167.gnm1.ann1.cxSM.pathway.tsv --stacktrace
+# ./gradlew integrate -Psource=aradu.V14167.gnm1.ann1.syn.qmkW --stacktrace
 
-## arahy.Tifrunner.gnm1
-./gradlew integrate -Psource=arahy.Tifrunner.gnm1.KYV3.genome_main.fna --stacktrace
-./gradlew integrate -Psource=arahy.Tifrunner.gnm1.ann1.CCJH.cds.fna --stacktrace
-./gradlew integrate -Psource=arahy.Tifrunner.gnm1.ann1.CCJH.protein.faa --stacktrace
-./gradlew integrate -Psource=arahy.Tifrunner.gnm1.ann1.CCJH.transcript.fna --stacktrace
-./gradlew integrate -Psource=arahy.Tifrunner.gnm1.ann1.CCJH.gene_models_main.gff3 --stacktrace
-./gradlew integrate -Psource=arahy.Tifrunner.gnm1.ann1.CCJH.legfed_v1_0.M65K.gfa.tsv --stacktrace
-./gradlew integrate -Psource=arahy.Tifrunner.gnm1.ann1.CCJH.legfed_v1_0.M65K.pathway.tsv --stacktrace
-./gradlew integrate -Psource=arahy.Tifrunner.gnm1.mrk.TPop_map_Agarwai2018 --stacktrace
-./gradlew integrate -Psource=arahy.Tifrunner.gnm1.mrk.Axiom_Arachis2_SNP --stacktrace
-./gradlew integrate -Psource=arahy.Tifrunner.gnm1.mrk.Axiom_Arachis_58K_SNP --stacktrace
+###########
+## araip ##
+###########
 
-## arahy.Tifrunner.gnm2
-# ./gradlew integrate -Psource=arahy.Tifrunner.gnm2.J5K5.genome_main.fna --stacktrace
-# ./gradlew integrate -Psource=arahy.Tifrunner.gnm2.ann1.4K0L.cds.fna --stacktrace
-# ./gradlew integrate -Psource=arahy.Tifrunner.gnm2.ann1.4K0L.protein.faa --stacktrace
-# ./gradlew integrate -Psource=arahy.Tifrunner.gnm2.ann1.4K0L.transcript.fna --stacktrace
-# ./gradlew integrate -Psource=arahy.Tifrunner.gnm2.ann1.4K0L.gene_models_main.gff3 --stacktrace
-# ./gradlew integrate -Psource=arahy.Tifrunner.gnm2.ann1.4K0L.legfed_v1_0.M65K.gfa.tsv --stacktrace
-# ./gradlew integrate -Psource=arahy.Tifrunner.gnm2.ann1.4K0L.legfed_v1_0.M65K.pathway.tsv --stacktrace
+# ./gradlew integrate -Psource=araip-about --stacktrace
 
-## genetic maps
-./gradlew integrate -Psource=mixed.map.TT_Tifrunner_x_GT-C20_c --stacktrace
-./gradlew integrate -Psource=mixed.map.TT_Huayu28_x_P76_a --stacktrace
-./gradlew integrate -Psource=mixed.map.TT_SunOleic97R_x_NC94022_a --stacktrace
-./gradlew integrate -Psource=mixed.map.TT_TAG24_x_GPBD4_b --stacktrace
+# ## araip.K30076.gnm1
+# ./gradlew integrate -Psource=araip.K30076.gnm1.bXJ8 --stacktrace
+# ./gradlew integrate -Psource=araip.K30076.gnm1.ann1.J37m.protein.faa --stacktrace
+# ./gradlew integrate -Psource=araip.K30076.gnm1.ann1.J37m.cds.fna --stacktrace
+# ./gradlew integrate -Psource=araip.K30076.gnm1.ann1.J37m.transcript.fna --stacktrace
+# ./gradlew integrate -Psource=araip.K30076.gnm1.ann1.J37m.gene_models_main.gff3 --stacktrace
+# ./gradlew integrate -Psource=araip.K30076.gnm1.ann1.J37m.legfed_v1_0.M65K.gfa.tsv --stacktrace
+# ./gradlew integrate -Psource=araip.K30076.gnm1.ann1.J37m.pathway.tsv --stacktrace
+# ./gradlew integrate -Psource=araip.K30076.gnm1.ann1.syn.S8s4 --stacktrace
 
-## QTL
-./gradlew integrate -Psource=mixed.qtl.TT_Tifrunner_x_GT-C20_c --stacktrace
-./gradlew integrate -Psource=mixed.qtl.TT_Huayu28_x_P76_a --stacktrace
-./gradlew integrate -Psource=mixed.qtl.TT_SunOleic97R_x_NC94022_a --stacktrace
-./gradlew integrate -Psource=mixed.qtl.TT_TAG24_x_GPBD4_b --stacktrace
 
-## GWAS
-./gradlew integrate -Psource=mixed.gwas.Gangurde_Wang_2020-NAMFlor7 --stacktrace
-./gradlew integrate -Psource=mixed.gwas.Gangurde_Wang_2020-NAMTifr --stacktrace
-./gradlew integrate -Psource=mixed.gwas.Otyama_Kulkarni_2020 --stacktrace
+###########
+## arahy ##
+###########
 
+# ./gradlew integrate -Psource=arahy-about --stacktrace
+
+# ## arahy.Tifrunner.gnm1
+# ./gradlew integrate -Psource=arahy.Tifrunner.gnm1.KYV3 --stacktrace
+# ./gradlew integrate -Psource=arahy.Tifrunner.gnm1.ann1.CCJH.cds.fna --stacktrace
+# ./gradlew integrate -Psource=arahy.Tifrunner.gnm1.ann1.CCJH.protein.faa --stacktrace
+# ./gradlew integrate -Psource=arahy.Tifrunner.gnm1.ann1.CCJH.transcript.fna --stacktrace
+# ./gradlew integrate -Psource=arahy.Tifrunner.gnm1.ann1.CCJH.gene_models_main.gff3 --stacktrace
+# ./gradlew integrate -Psource=arahy.Tifrunner.gnm1.ann1.CCJH.legfed_v1_0.M65K.gfa.tsv --stacktrace
+# ./gradlew integrate -Psource=arahy.Tifrunner.gnm1.ann1.CCJH.legfed_v1_0.M65K.pathway.tsv --stacktrace
+# ./gradlew integrate -Psource=arahy.Tifrunner.gnm1.mrk.TPop_map_Agarwai2018 --stacktrace
+# ./gradlew integrate -Psource=arahy.Tifrunner.gnm1.mrk.Axiom_Arachis2_SNP --stacktrace
+# ./gradlew integrate -Psource=arahy.Tifrunner.gnm1.mrk.Axiom_Arachis_58K_SNP --stacktrace
+
+# ## DO NOT LOAD -- only one assembly
+# ## arahy.Tifrunner.gnm2
+# # ./gradlew integrate -Psource=arahy.Tifrunner.gnm2.J5K5 --stacktrace
+# # ./gradlew integrate -Psource=arahy.Tifrunner.gnm2.ann1.4K0L.cds.fna --stacktrace
+# # ./gradlew integrate -Psource=arahy.Tifrunner.gnm2.ann1.4K0L.protein.faa --stacktrace
+# # ./gradlew integrate -Psource=arahy.Tifrunner.gnm2.ann1.4K0L.transcript.fna --stacktrace
+# # ./gradlew integrate -Psource=arahy.Tifrunner.gnm2.ann1.4K0L.gene_models_main.gff3 --stacktrace
+# # ./gradlew integrate -Psource=arahy.Tifrunner.gnm2.ann1.4K0L.legfed_v1_0.M65K.gfa.tsv --stacktrace
+# # ./gradlew integrate -Psource=arahy.Tifrunner.gnm2.ann1.4K0L.legfed_v1_0.M65K.pathway.tsv --stacktrace
+
+# ## arahy gen
+# ./gradlew integrate -Psource=arahy.Huayu28_x_P76.gen.Hu_Zhang_2018 --stacktrace
+# ./gradlew integrate -Psource=arahy.ICGS44_x_ICGS76.gen.Gautami_Pandey_2012 --stacktrace
+# ./gradlew integrate -Psource=arahy.ICGS76_x_CSMG84.gen.Gautami_Pandey_2012 --stacktrace
+# ./gradlew integrate -Psource=arahy.mixed.gen.Gautami_Pandey_2012 --stacktrace
+# ./gradlew integrate -Psource=arahy.mixed.gen.Sujay_Gowda_2012 --stacktrace
+# ./gradlew integrate -Psource=arahy.SunOleic97R_x_NC94022.gen.Qin_Feng_2012 --stacktrace
+# ./gradlew integrate -Psource=arahy.TAG24_x_GPBD4.gen.Kolekar_Sujay_2016 --stacktrace
+# ./gradlew integrate -Psource=arahy.TAG24_x_ICGV86031.gen.Ravi_Vadez_2011 --stacktrace
+# ./gradlew integrate -Psource=arahy.TG26_x_GPBD4.gen.Sarvamanga_Gowdaa_2011 --stacktrace
+# ./gradlew integrate -Psource=arahy.TG26_x_GPBD4.gen.Sujay_Gowda_2012 --stacktrace
+# ./gradlew integrate -Psource=arahy.Tifrunner_x_GT-C20.gen.Agarwal_Clevenger_2018 --stacktrace
+# ./gradlew integrate -Psource=arahy.Tifrunner_x_GT-C20.gen.Qin_Feng_2012 --stacktrace
+# ./gradlew integrate -Psource=arahy.Tifrunner_x_GT-C20.gen.Wang_Penmetsa_2012 --stacktrace
+# ./gradlew integrate -Psource=arahy.VG9514_x_TAG24.gen.Mondal_Hadapad_2014 --stacktrace
+
+## arahy gwas
+./gradlew integrate -Psource=arahy.NAMFlor7.gwas.Gangurde_Wang_2020 --stacktrace
+./gradlew integrate -Psource=arahy.NAMTifr.gwas.Gangurde_Wang_2020 --stacktrace
+./gradlew integrate -Psource=arahy.USPeanutCore.gwas.Otyama_Kulkarni_2020 --stacktrace

@@ -387,7 +387,6 @@
     </headerconfig>
     <fields>
       <fieldconfig fieldExpr="primaryIdentifier" label="LIS Identifier"/>
-      <fieldconfig fieldExpr="subject" label="Subject"/>
       <fieldconfig fieldExpr="genotypingPlatform" label="Genotyping Platform"/>
     </fields>
   </class>
@@ -415,7 +414,6 @@
     </headerconfig>
     <fields>
       <fieldconfig fieldExpr="primaryIdentifier" label="LIS Identifier"/>
-      <fieldconfig fieldExpr="name" label="LIS Name"/>
       <fieldconfig fieldExpr="description" label="Description"/>
     </fields>
   </class>
@@ -457,17 +455,17 @@
 
     <!-- ============================================================================================== -->
 
-    <reportdisplayer javaClass="org.ncgr.intermine.bio.web.displayer.LinkageGroupDisplayer"
-                     jspName="model/linkageGroupDisplayer.jsp"
-                     replacesFields=""
-                     placement="summary"
-                     types="LinkageGroup"/>
+    <!-- <reportdisplayer javaClass="org.ncgr.intermine.bio.web.displayer.LinkageGroupDisplayer" -->
+    <!--                  jspName="model/linkageGroupDisplayer.jsp" -->
+    <!--                  replacesFields="" -->
+    <!--                  placement="summary" -->
+    <!--                  types="LinkageGroup"/> -->
 
-    <reportdisplayer javaClass="org.ncgr.intermine.bio.web.displayer.LinkageGroupDisplayer"
-                     jspName="model/linkageGroupDisplayer.jsp"
-                     replacesFields=""
-                     placement="summary"
-                     types="QTL"/>
+    <!-- <reportdisplayer javaClass="org.ncgr.intermine.bio.web.displayer.LinkageGroupDisplayer" -->
+    <!--                  jspName="model/linkageGroupDisplayer.jsp" -->
+    <!--                  replacesFields="" -->
+    <!--                  placement="summary" -->
+    <!--                  types="QTL"/> -->
 
     <!-- <reportdisplayer javaClass="org.ncgr.intermine.bio.web.displayer.LinkageGroupDisplayer" -->
     <!--                  jspName="model/linkageGroupDiagram.jsp" -->
