@@ -63,7 +63,7 @@ subprojects {
     from (minePropertyFile)
     into sourceSets.main.output.resourcesDir
     rename { fileName -> fileName.replace("$minePropertyFileName", "intermine.properties") }
-    inputs.sourceFiles.stopExecutionIfEmpty()
+    // inputs.sourceFiles.stopExecutionIfEmpty()
   }
 }
 
