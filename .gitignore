@@ -3,6 +3,12 @@
 .gradle
 libs
 build
+webapp/src/main/webapp/begin.jsp
+webapp/src/main/webapp/dataCategories.jsp
+webapp/src/main/webapp/footer.jsp
+webapp/src/main/webapp/htmlHead.jsp
+webapp/src/main/webapp/log4j.properties
+webapp/src/main/webapp/report.jsp
 webapp/src/main/java
 webapp/src/main/webapp/model
 webapp/src/main/webapp/.gitignore
