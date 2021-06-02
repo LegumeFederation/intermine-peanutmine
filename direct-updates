@@ -8,7 +8,11 @@ psql -f dbmodel/build/resources/main/add-update-triggers.sql ${MINENAME}-dev
 
 ## do updates
 cd ~/java/ncgr/intermine
+
+echo "########## cdsreferenceupdater ${MINENAME}"
 ./cdsreferenceupdater $MINENAME
+
+echo "########## transcriptreferenceupdater $MINENAME"
 ./transcriptreferenceupdater $MINENAME
 
 ## remove triggers
